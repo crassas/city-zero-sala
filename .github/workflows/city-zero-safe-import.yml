@@ -1,13 +1,10 @@
 name: City Zero safe source import
 
 on:
-  push:
-    branches:
-      - import/ai-studio-city-zero-2026-08-22
   pull_request:
     branches:
       - main
-    types: [opened, reopened, synchronize, ready_for_review]
+    types: [edited]
 
 permissions:
   contents: write
