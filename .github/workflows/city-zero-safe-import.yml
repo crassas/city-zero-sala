@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - import/ai-studio-city-zero-2026-08-22
+  pull_request:
+    branches:
+      - main
+    types: [opened, reopened, synchronize, ready_for_review]
 
 permissions:
   contents: write
@@ -15,6 +19,7 @@ jobs:
       - name: Checkout import branch
         uses: actions/checkout@v4
         with:
+          ref: import/ai-studio-city-zero-2026-08-22
           fetch-depth: 0
 
       - name: Stop when bootstrap archive is already consumed
@@ -32,7 +37,7 @@ jobs:
         shell: bash
         run: |
           python - <<'PY'
-          import hashlib, json, os, pathlib, tarfile
+          import hashlib, json, pathlib, tarfile
 
           archive = pathlib.Path('.city-zero-import/city-zero-clean-source.tar.xz')
           with tarfile.open(archive, 'r:xz') as tf:
@@ -51,8 +56,7 @@ jobs:
 
           expected = json.loads(pathlib.Path('PROTECTED_HASHES.json').read_text())
           for rel, digest in expected.items():
-              data = pathlib.Path(rel).read_bytes()
-              actual = hashlib.sha256(data).hexdigest()
+              actual = hashlib.sha256(pathlib.Path(rel).read_bytes()).hexdigest()
               if actual != digest:
                   raise SystemExit(f'protected hash mismatch: {rel}')
           print(f'protected hashes verified: {len(expected)}')
