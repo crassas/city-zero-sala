@@ -22,24 +22,28 @@ jobs:
           ref: import/ai-studio-city-zero-2026-08-22
           fetch-depth: 0
 
-      - name: Stop when bootstrap archive is already consumed
+      - name: Detect complete bootstrap
         id: bootstrap
         shell: bash
         run: |
-          if [ -f .city-zero-import/city-zero-clean-source.tar.xz ]; then
+          if [ -f .city-zero-import/READY ]; then
             echo "present=true" >> "$GITHUB_OUTPUT"
           else
             echo "present=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Extract and verify safe source
+      - name: Reconstruct, extract and verify safe source
         if: steps.bootstrap.outputs.present == 'true'
         shell: bash
         run: |
+          set -euo pipefail
+          cat .city-zero-import/source.b64.part-* > /tmp/city-zero-source.b64
+          base64 --decode /tmp/city-zero-source.b64 > /tmp/city-zero-clean-source.tar.xz
+          echo "81a86bd04a8cf2f38ab7fbd580ed3b0f21074f147736996a1d8348e5d543ffbe  /tmp/city-zero-clean-source.tar.xz" | sha256sum -c -
           python - <<'PY'
           import hashlib, json, pathlib, tarfile
 
-          archive = pathlib.Path('.city-zero-import/city-zero-clean-source.tar.xz')
+          archive = pathlib.Path('/tmp/city-zero-clean-source.tar.xz')
           with tarfile.open(archive, 'r:xz') as tf:
               members = tf.getmembers()
               for member in members:
@@ -66,11 +70,11 @@ jobs:
         if: steps.bootstrap.outputs.present == 'true'
         shell: bash
         run: |
+          set -euo pipefail
           python - <<'PY'
-          import pathlib, subprocess, tarfile
+          import subprocess, tarfile
 
-          archive = pathlib.Path('.city-zero-import/city-zero-clean-source.tar.xz')
-          with tarfile.open(archive, 'r:xz') as tf:
+          with tarfile.open('/tmp/city-zero-clean-source.tar.xz', 'r:xz') as tf:
               paths = []
               for m in tf.getmembers():
                   if not m.isfile():
@@ -78,12 +82,13 @@ jobs:
                   p = m.name[2:] if m.name.startswith('./') else m.name
                   if p:
                       paths.append(p)
-
           for i in range(0, len(paths), 50):
               subprocess.run(['git', 'add', '--', *paths[i:i+50]], check=True)
-          archive.unlink()
-          subprocess.run(['git', 'add', '-u', '--', '.city-zero-import/city-zero-clean-source.tar.xz'], check=True)
           PY
+          rm -f .city-zero-import/city-zero-clean-source.tar.xz
+          rm -f .city-zero-import/source.b64.part-*
+          rm -f .city-zero-import/READY
+          git add -u -- .city-zero-import
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Import City Zero AI Studio source (safe)"
