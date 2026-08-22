@@ -1,0 +1,19 @@
+{
+  "missionId": "MISSION-ROUTE-RETURN-20260820-001",
+  "actor": "CODEX",
+  "purpose": "Install operational GPS, declared stops and verified return trail",
+  "allowedPaths": [
+    "routeLedger.ts",
+    "src/runtime/schemas.ts",
+    "src/runtime/topology.ts",
+    "AGENTS.md",
+    "ACTIVE_CHANGE_SCOPE.json",
+    "PROTECTED_PATHS.json",
+    "verify_change_scope.mjs",
+    "vite.config.ts",
+    "package.json"
+  ],
+  "expiresAt": "2026-08-21T23:59:59+01:00",
+  "maxChangedFiles": 8,
+  "ownerOverrideRequired": false
+}

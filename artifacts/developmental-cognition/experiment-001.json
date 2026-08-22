@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-08-20T20:39:26.155Z",
+  "actors": {
+    "ActorA_Stable": {
+      "preTransfer": {
+        "stage": "CONSOLIDATING",
+        "global_plasticity": 0.975,
+        "tech_plasticity": 0.95,
+        "consolidated_schemas": 1,
+        "contradictions": 0,
+        "top_disposition": "A_leads_to_B"
+      },
+      "postTransfer": {
+        "stage": "CONSOLIDATING",
+        "global_plasticity": 0.97,
+        "tech_plasticity": 0.95,
+        "consolidated_schemas": 1,
+        "contradictions": 0,
+        "top_disposition": "A_leads_to_B"
+      }
+    },
+    "ActorB_Volatile": {
+      "preTransfer": {
+        "stage": "INITIAL",
+        "global_plasticity": 0.995,
+        "tech_plasticity": 0.975,
+        "consolidated_schemas": 0,
+        "contradictions": 3,
+        "top_disposition": "Betrayal"
+      },
+      "postTransfer": {
+        "stage": "INITIAL",
+        "global_plasticity": 0.99,
+        "tech_plasticity": 0.975,
+        "consolidated_schemas": 0,
+        "contradictions": 3,
+        "top_disposition": "Betrayal"
+      }
+    },
+    "ActorC_Cooperative": {
+      "preTransfer": {
+        "stage": "CONSOLIDATING",
+        "global_plasticity": 0.975,
+        "tech_plasticity": 0.975,
+        "consolidated_schemas": 1,
+        "contradictions": 0,
+        "top_disposition": "Share_resources"
+      },
+      "postTransfer": {
+        "stage": "CONSOLIDATING",
+        "global_plasticity": 0.97,
+        "tech_plasticity": 0.975,
+        "consolidated_schemas": 1,
+        "contradictions": 0,
+        "top_disposition": "Share_resources"
+      }
+    }
+  },
+  "findings": "Actor state diverged under defined update rules. Actor B retained high plasticity due to contradictions. Actor A and C consolidated schemas and lowered plasticity. This deterministic history simulation proves the state transition logic."
+}

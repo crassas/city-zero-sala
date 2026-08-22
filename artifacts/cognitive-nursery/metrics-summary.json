@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-08-20T21:55:07.781Z",
+  "suiteSuccess": true,
+  "testsTotal": 16,
+  "testsPassed": 16,
+  "exp001Confirmed": true,
+  "exp002Confirmed": true,
+  "exp003Confirmed": true,
+  "exp004Confirmed": true,
+  "stateDivergenceDistance": 0.9315,
+  "evidenceDemandDelta": 0.45,
+  "teacherGainVsRandom": 0
+}

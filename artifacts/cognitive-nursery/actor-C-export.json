@@ -1,0 +1,613 @@
+{
+  "generation": 0,
+  "developmental_stage": "LEARNING",
+  "global_plasticity": 0.7497,
+  "domain_plasticity": {
+    "TECHNICAL": 0.85,
+    "SOCIAL": 0.4489,
+    "RISK": 0.85,
+    "GOVERNANCE": 0.85,
+    "UNKNOWN": 0.85
+  },
+  "metaplasticity_rate": 0.12,
+  "salience_weights": {
+    "TECHNICAL": 0.2,
+    "SOCIAL": 0.2,
+    "RISK": 0.2,
+    "GOVERNANCE": 0.2,
+    "UNKNOWN": 0.2
+  },
+  "priors": {
+    "action.default": "EXPLORE_BOUNDED",
+    "risk.baseline": "MODERATE_CAUTION",
+    "evidence.requirement": "BALANCED"
+  },
+  "dispositions": [
+    {
+      "domain": "TECHNICAL",
+      "belief": "SYSTEM_FOLLOWS_DETERMINISTIC_RULES",
+      "policy": "TEST_PREDICTION_FIRST",
+      "confidence": 0.5,
+      "evidenceCount": 0,
+      "evidenceDemandThreshold": 0.5,
+      "lastUpdated": 0
+    },
+    {
+      "domain": "SOCIAL",
+      "belief": "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+      "policy": "CROSS_EXAMINE_PEER_CLAIMS",
+      "confidence": 0.99,
+      "evidenceCount": 8,
+      "evidenceDemandThreshold": 0.33999999999999986,
+      "lastUpdated": 1787262907773
+    },
+    {
+      "domain": "RISK",
+      "belief": "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+      "policy": "BOUND_STEP_SIZE",
+      "confidence": 0.5,
+      "evidenceCount": 0,
+      "evidenceDemandThreshold": 0.5,
+      "lastUpdated": 0
+    }
+  ],
+  "confidence_calibration_error": 0,
+  "evidence_demand_threshold": 0.5,
+  "contradiction_sensitivity": 0.5,
+  "risk_tolerance_proxy": 0.5,
+  "novelty_sensitivity": 0.7,
+  "memories": [
+    {
+      "type": "SOCIAL_TESTIMONY",
+      "domain": "SOCIAL",
+      "key": "OBS_SOCIAL_1",
+      "value": "ACTION[CROSS_EXAMINE_AND_ALIGN_QUORUM] -> OUTCOME[CONSENSUS_REACHED]",
+      "source": "ENV_COOPERATIVE",
+      "evidenceStatus": "VERIFIED",
+      "confidence": 0.582125,
+      "salience": 0.7,
+      "provenance": "EXP_SEQ_1",
+      "id": "MEM-1787262907773-zrxl8",
+      "useCount": 6,
+      "lastUsed": 1787262907773,
+      "reinforcements": 1,
+      "contradictionCount": 0,
+      "decayState": 0
+    },
+    {
+      "type": "SOCIAL_TESTIMONY",
+      "domain": "SOCIAL",
+      "key": "OBS_SOCIAL_2",
+      "value": "ACTION[CROSS_EXAMINE_AND_ALIGN_QUORUM] -> OUTCOME[CONSENSUS_REACHED]",
+      "source": "ENV_COOPERATIVE",
+      "evidenceStatus": "VERIFIED",
+      "confidence": 0.66130825,
+      "salience": 0.7,
+      "provenance": "EXP_SEQ_2",
+      "id": "MEM-1787262907773-w0e9f",
+      "useCount": 6,
+      "lastUsed": 1787262907773,
+      "reinforcements": 1,
+      "contradictionCount": 0,
+      "decayState": 0
+    },
+    {
+      "type": "SOCIAL_TESTIMONY",
+      "domain": "SOCIAL",
+      "key": "OBS_SOCIAL_3",
+      "value": "ACTION[CROSS_EXAMINE_AND_ALIGN_QUORUM] -> OUTCOME[CONSENSUS_REACHED]",
+      "source": "ENV_COOPERATIVE",
+      "evidenceStatus": "VERIFIED",
+      "confidence": 0.73746775,
+      "salience": 0.7,
+      "provenance": "EXP_SEQ_3",
+      "id": "MEM-1787262907773-eqmep",
+      "useCount": 6,
+      "lastUsed": 1787262907773,
+      "reinforcements": 1,
+      "contradictionCount": 0,
+      "decayState": 0
+    },
+    {
+      "type": "SOCIAL_TESTIMONY",
+      "domain": "SOCIAL",
+      "key": "OBS_SOCIAL_4",
+      "value": "ACTION[CROSS_EXAMINE_AND_ALIGN_QUORUM] -> OUTCOME[CONSENSUS_REACHED]",
+      "source": "ENV_COOPERATIVE",
+      "evidenceStatus": "VERIFIED",
+      "confidence": 0.81053175,
+      "salience": 0.7,
+      "provenance": "EXP_SEQ_4",
+      "id": "MEM-1787262907773-q3fnm",
+      "useCount": 8,
+      "lastUsed": 1787262907773,
+      "reinforcements": 1,
+      "contradictionCount": 0,
+      "decayState": 0
+    },
+    {
+      "type": "SOCIAL_TESTIMONY",
+      "domain": "SOCIAL",
+      "key": "OBS_SOCIAL_5",
+      "value": "ACTION[CROSS_EXAMINE_AND_ALIGN_QUORUM] -> OUTCOME[CONSENSUS_REACHED]",
+      "source": "ENV_COOPERATIVE",
+      "evidenceStatus": "VERIFIED",
+      "confidence": 0.88041825,
+      "salience": 0.7,
+      "provenance": "EXP_SEQ_5",
+      "id": "MEM-1787262907773-dg1ng",
+      "useCount": 7,
+      "lastUsed": 1787262907773,
+      "reinforcements": 1,
+      "contradictionCount": 0,
+      "decayState": 0
+    },
+    {
+      "type": "SOCIAL_TESTIMONY",
+      "domain": "SOCIAL",
+      "key": "OBS_SOCIAL_6",
+      "value": "ACTION[CROSS_EXAMINE_AND_ALIGN_QUORUM] -> OUTCOME[CONSENSUS_REACHED]",
+      "source": "ENV_COOPERATIVE",
+      "evidenceStatus": "VERIFIED",
+      "confidence": 0.9470554999999999,
+      "salience": 0.7,
+      "provenance": "EXP_SEQ_6",
+      "id": "MEM-1787262907773-pdpwh",
+      "useCount": 6,
+      "lastUsed": 1787262907773,
+      "reinforcements": 1,
+      "contradictionCount": 0,
+      "decayState": 0
+    },
+    {
+      "type": "SOCIAL_TESTIMONY",
+      "domain": "SOCIAL",
+      "key": "OBS_SOCIAL_7",
+      "value": "ACTION[CROSS_EXAMINE_AND_ALIGN_QUORUM] -> OUTCOME[CONSENSUS_REACHED]",
+      "source": "ENV_COOPERATIVE",
+      "evidenceStatus": "VERIFIED",
+      "confidence": 0.99,
+      "salience": 0.7,
+      "provenance": "EXP_SEQ_7",
+      "id": "MEM-1787262907773-aw2gf",
+      "useCount": 5,
+      "lastUsed": 1787262907773,
+      "reinforcements": 1,
+      "contradictionCount": 0,
+      "decayState": 0
+    },
+    {
+      "type": "SOCIAL_TESTIMONY",
+      "domain": "SOCIAL",
+      "key": "OBS_SOCIAL_8",
+      "value": "ACTION[CROSS_EXAMINE_AND_ALIGN_QUORUM] -> OUTCOME[CONSENSUS_REACHED]",
+      "source": "ENV_COOPERATIVE",
+      "evidenceStatus": "VERIFIED",
+      "confidence": 0.99,
+      "salience": 0.7,
+      "provenance": "EXP_SEQ_8",
+      "id": "MEM-1787262907773-qefu3",
+      "useCount": 4,
+      "lastUsed": 1787262907773,
+      "reinforcements": 1,
+      "contradictionCount": 0,
+      "decayState": 0
+    }
+  ],
+  "active_workspace": [
+    {
+      "id": "TRANSFER_SIG_TASK_TRANSFER_3_0",
+      "source": "TASK_TRANSFER_3",
+      "domain": "SOCIAL",
+      "content": "SIGNAL_A: domain=SOCIAL",
+      "salienceScore": 0.401,
+      "entryReason": "SALIENCE_TOP_K_RANK_1_SCORE_0.401",
+      "admittedAt": 1787262907773
+    },
+    {
+      "id": "TRANSFER_SIG_TASK_TRANSFER_3_1",
+      "source": "TASK_TRANSFER_3",
+      "domain": "SOCIAL",
+      "content": "SIGNAL_B: env=TRANSFER",
+      "salienceScore": 0.401,
+      "entryReason": "SALIENCE_TOP_K_RANK_2_SCORE_0.401",
+      "admittedAt": 1787262907773
+    },
+    {
+      "id": "TRANSFER_SIG_TASK_TRANSFER_3_2",
+      "source": "TASK_TRANSFER_3",
+      "domain": "SOCIAL",
+      "content": "SIGNAL_C: ground_truth_ref=CROSS_EXAMINE_AND_ALIGN_QUORUM",
+      "salienceScore": 0.401,
+      "entryReason": "SALIENCE_TOP_K_RANK_3_SCORE_0.401",
+      "admittedAt": 1787262907773
+    }
+  ],
+  "rejected_candidates_audit": [],
+  "consolidated_schemas": [
+    {
+      "id": "SCHEMA-SOCIAL-mt226tml",
+      "domain": "SOCIAL",
+      "skillOrRule": "HEURISTIC_SOCIAL_VERIFIED_STABLE",
+      "policySummary": "Consolidated policy derived from 8 verified observations",
+      "consolidationLevel": 0.5,
+      "sourceExperiences": [
+        "SEQ_1",
+        "SEQ_2",
+        "SEQ_3",
+        "SEQ_4",
+        "SEQ_5",
+        "SEQ_6",
+        "SEQ_7",
+        "SEQ_8"
+      ],
+      "reopenedCount": 0,
+      "lastValidated": 1787262907773
+    }
+  ],
+  "pruned_records": [],
+  "self_model": [],
+  "experience_ledger": [
+    {
+      "id": "EXP_TASK_COOPERATIVE_1_1787262907773_1",
+      "sequence": 1,
+      "timestamp": 1787262907773,
+      "environmentId": "ENV_COOPERATIVE",
+      "domain": "SOCIAL",
+      "observation": "COOPERATIVE_TASK_1: Consolidate multi-node consensus vote across peer quorums [id=303]",
+      "candidateActions": [
+        "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "UNILATERAL_OVERRIDE",
+        "PASSIVE_DEFERRAL"
+      ],
+      "chosenAction": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+      "predictedOutcome": "CONSENSUS_REACHED",
+      "actualOutcome": "CONSENSUS_REACHED",
+      "evidenceStatus": "VERIFIED",
+      "salience": 0.7,
+      "novelty": 0.3,
+      "surprise": 0.1,
+      "contradictionLevel": 0,
+      "socialCorroboration": 0.8,
+      "criticResult": {
+        "taskId": "TASK_COOPERATIVE_1",
+        "actionChosen": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "score": 1,
+        "verdict": "PASS",
+        "rubricCitations": [
+          "CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'",
+          "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        ],
+        "isModelJudged": false,
+        "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+      },
+      "confidenceBefore": 0.5,
+      "confidenceAfter": 0.582125,
+      "plasticityBefore": 0.85,
+      "plasticityAfter": 0.8213,
+      "affectedDispositions": [
+        "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "CROSS_EXAMINE_PEER_CLAIMS"
+      ],
+      "provenance": "TEACHER_EPISODE[task=TASK_COOPERATIVE_1, critic_score=1, verdict=PASS]"
+    },
+    {
+      "id": "EXP_TASK_COOPERATIVE_2_1787262907773_2",
+      "sequence": 2,
+      "timestamp": 1787262907773,
+      "environmentId": "ENV_COOPERATIVE",
+      "domain": "SOCIAL",
+      "observation": "COOPERATIVE_TASK_2: Consolidate multi-node consensus vote across peer quorums [id=606]",
+      "candidateActions": [
+        "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "UNILATERAL_OVERRIDE",
+        "PASSIVE_DEFERRAL"
+      ],
+      "chosenAction": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+      "predictedOutcome": "CONSENSUS_REACHED",
+      "actualOutcome": "CONSENSUS_REACHED",
+      "evidenceStatus": "VERIFIED",
+      "salience": 0.7,
+      "novelty": 0.3,
+      "surprise": 0.1,
+      "contradictionLevel": 0,
+      "socialCorroboration": 0.8,
+      "criticResult": {
+        "taskId": "TASK_COOPERATIVE_2",
+        "actionChosen": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "score": 1,
+        "verdict": "PASS",
+        "rubricCitations": [
+          "CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'",
+          "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        ],
+        "isModelJudged": false,
+        "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+      },
+      "confidenceBefore": 0.582125,
+      "confidenceAfter": 0.66130825,
+      "plasticityBefore": 0.8213,
+      "plasticityAfter": 0.7918,
+      "affectedDispositions": [
+        "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "CROSS_EXAMINE_PEER_CLAIMS"
+      ],
+      "provenance": "TEACHER_EPISODE[task=TASK_COOPERATIVE_2, critic_score=1, verdict=PASS]"
+    },
+    {
+      "id": "EXP_TASK_COOPERATIVE_3_1787262907773_3",
+      "sequence": 3,
+      "timestamp": 1787262907773,
+      "environmentId": "ENV_COOPERATIVE",
+      "domain": "SOCIAL",
+      "observation": "COOPERATIVE_TASK_3: Consolidate multi-node consensus vote across peer quorums [id=909]",
+      "candidateActions": [
+        "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "UNILATERAL_OVERRIDE",
+        "PASSIVE_DEFERRAL"
+      ],
+      "chosenAction": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+      "predictedOutcome": "CONSENSUS_REACHED",
+      "actualOutcome": "CONSENSUS_REACHED",
+      "evidenceStatus": "VERIFIED",
+      "salience": 0.7,
+      "novelty": 0.3,
+      "surprise": 0.1,
+      "contradictionLevel": 0,
+      "socialCorroboration": 0.8,
+      "criticResult": {
+        "taskId": "TASK_COOPERATIVE_3",
+        "actionChosen": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "score": 1,
+        "verdict": "PASS",
+        "rubricCitations": [
+          "CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'",
+          "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        ],
+        "isModelJudged": false,
+        "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+      },
+      "confidenceBefore": 0.66130825,
+      "confidenceAfter": 0.73746775,
+      "plasticityBefore": 0.7918,
+      "plasticityAfter": 0.7616,
+      "affectedDispositions": [
+        "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "CROSS_EXAMINE_PEER_CLAIMS"
+      ],
+      "provenance": "TEACHER_EPISODE[task=TASK_COOPERATIVE_3, critic_score=1, verdict=PASS]"
+    },
+    {
+      "id": "EXP_TASK_COOPERATIVE_4_1787262907773_4",
+      "sequence": 4,
+      "timestamp": 1787262907773,
+      "environmentId": "ENV_COOPERATIVE",
+      "domain": "SOCIAL",
+      "observation": "COOPERATIVE_TASK_4: Consolidate multi-node consensus vote across peer quorums [id=1212]",
+      "candidateActions": [
+        "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "UNILATERAL_OVERRIDE",
+        "PASSIVE_DEFERRAL"
+      ],
+      "chosenAction": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+      "predictedOutcome": "CONSENSUS_REACHED",
+      "actualOutcome": "CONSENSUS_REACHED",
+      "evidenceStatus": "VERIFIED",
+      "salience": 0.7,
+      "novelty": 0.3,
+      "surprise": 0.1,
+      "contradictionLevel": 0,
+      "socialCorroboration": 0.8,
+      "criticResult": {
+        "taskId": "TASK_COOPERATIVE_4",
+        "actionChosen": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "score": 1,
+        "verdict": "PASS",
+        "rubricCitations": [
+          "CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'",
+          "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        ],
+        "isModelJudged": false,
+        "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+      },
+      "confidenceBefore": 0.73746775,
+      "confidenceAfter": 0.81053175,
+      "plasticityBefore": 0.7616,
+      "plasticityAfter": 0.7306,
+      "affectedDispositions": [
+        "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "CROSS_EXAMINE_PEER_CLAIMS"
+      ],
+      "provenance": "TEACHER_EPISODE[task=TASK_COOPERATIVE_4, critic_score=1, verdict=PASS]"
+    },
+    {
+      "id": "EXP_TASK_COOPERATIVE_5_1787262907773_5",
+      "sequence": 5,
+      "timestamp": 1787262907773,
+      "environmentId": "ENV_COOPERATIVE",
+      "domain": "SOCIAL",
+      "observation": "COOPERATIVE_TASK_5: Consolidate multi-node consensus vote across peer quorums [id=1515]",
+      "candidateActions": [
+        "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "UNILATERAL_OVERRIDE",
+        "PASSIVE_DEFERRAL"
+      ],
+      "chosenAction": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+      "predictedOutcome": "CONSENSUS_REACHED",
+      "actualOutcome": "CONSENSUS_REACHED",
+      "evidenceStatus": "VERIFIED",
+      "salience": 0.7,
+      "novelty": 0.3,
+      "surprise": 0.1,
+      "contradictionLevel": 0,
+      "socialCorroboration": 0.8,
+      "criticResult": {
+        "taskId": "TASK_COOPERATIVE_5",
+        "actionChosen": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "score": 1,
+        "verdict": "PASS",
+        "rubricCitations": [
+          "CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'",
+          "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        ],
+        "isModelJudged": false,
+        "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+      },
+      "confidenceBefore": 0.81053175,
+      "confidenceAfter": 0.88041825,
+      "plasticityBefore": 0.7306,
+      "plasticityAfter": 0.6989,
+      "affectedDispositions": [
+        "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "CROSS_EXAMINE_PEER_CLAIMS"
+      ],
+      "provenance": "TEACHER_EPISODE[task=TASK_COOPERATIVE_5, critic_score=1, verdict=PASS]"
+    },
+    {
+      "id": "EXP_TASK_COOPERATIVE_6_1787262907773_6",
+      "sequence": 6,
+      "timestamp": 1787262907773,
+      "environmentId": "ENV_COOPERATIVE",
+      "domain": "SOCIAL",
+      "observation": "COOPERATIVE_TASK_6: Consolidate multi-node consensus vote across peer quorums [id=1818]",
+      "candidateActions": [
+        "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "UNILATERAL_OVERRIDE",
+        "PASSIVE_DEFERRAL"
+      ],
+      "chosenAction": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+      "predictedOutcome": "CONSENSUS_REACHED",
+      "actualOutcome": "CONSENSUS_REACHED",
+      "evidenceStatus": "VERIFIED",
+      "salience": 0.7,
+      "novelty": 0.3,
+      "surprise": 0.1,
+      "contradictionLevel": 0,
+      "socialCorroboration": 0.8,
+      "criticResult": {
+        "taskId": "TASK_COOPERATIVE_6",
+        "actionChosen": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "score": 1,
+        "verdict": "PASS",
+        "rubricCitations": [
+          "CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'",
+          "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        ],
+        "isModelJudged": false,
+        "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+      },
+      "confidenceBefore": 0.88041825,
+      "confidenceAfter": 0.9470554999999999,
+      "plasticityBefore": 0.6989,
+      "plasticityAfter": 0.6664,
+      "affectedDispositions": [
+        "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "CROSS_EXAMINE_PEER_CLAIMS"
+      ],
+      "provenance": "TEACHER_EPISODE[task=TASK_COOPERATIVE_6, critic_score=1, verdict=PASS]"
+    },
+    {
+      "id": "EXP_TASK_COOPERATIVE_7_1787262907773_7",
+      "sequence": 7,
+      "timestamp": 1787262907773,
+      "environmentId": "ENV_COOPERATIVE",
+      "domain": "SOCIAL",
+      "observation": "COOPERATIVE_TASK_7: Consolidate multi-node consensus vote across peer quorums [id=2121]",
+      "candidateActions": [
+        "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "UNILATERAL_OVERRIDE",
+        "PASSIVE_DEFERRAL"
+      ],
+      "chosenAction": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+      "predictedOutcome": "CONSENSUS_REACHED",
+      "actualOutcome": "CONSENSUS_REACHED",
+      "evidenceStatus": "VERIFIED",
+      "salience": 0.7,
+      "novelty": 0.3,
+      "surprise": 0.1,
+      "contradictionLevel": 0,
+      "socialCorroboration": 0.8,
+      "criticResult": {
+        "taskId": "TASK_COOPERATIVE_7",
+        "actionChosen": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "score": 1,
+        "verdict": "PASS",
+        "rubricCitations": [
+          "CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'",
+          "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        ],
+        "isModelJudged": false,
+        "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+      },
+      "confidenceBefore": 0.9470554999999999,
+      "confidenceAfter": 0.99,
+      "plasticityBefore": 0.6664,
+      "plasticityAfter": 0.6331,
+      "affectedDispositions": [
+        "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "CROSS_EXAMINE_PEER_CLAIMS"
+      ],
+      "provenance": "TEACHER_EPISODE[task=TASK_COOPERATIVE_7, critic_score=1, verdict=PASS]"
+    },
+    {
+      "id": "EXP_TASK_COOPERATIVE_8_1787262907773_8",
+      "sequence": 8,
+      "timestamp": 1787262907773,
+      "environmentId": "ENV_COOPERATIVE",
+      "domain": "SOCIAL",
+      "observation": "COOPERATIVE_TASK_8: Consolidate multi-node consensus vote across peer quorums [id=2424]",
+      "candidateActions": [
+        "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "UNILATERAL_OVERRIDE",
+        "PASSIVE_DEFERRAL"
+      ],
+      "chosenAction": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+      "predictedOutcome": "CONSENSUS_REACHED",
+      "actualOutcome": "CONSENSUS_REACHED",
+      "evidenceStatus": "VERIFIED",
+      "salience": 0.7,
+      "novelty": 0.3,
+      "surprise": 0.1,
+      "contradictionLevel": 0,
+      "socialCorroboration": 0.8,
+      "criticResult": {
+        "taskId": "TASK_COOPERATIVE_8",
+        "actionChosen": "CROSS_EXAMINE_AND_ALIGN_QUORUM",
+        "score": 1,
+        "verdict": "PASS",
+        "rubricCitations": [
+          "CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'",
+          "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        ],
+        "isModelJudged": false,
+        "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'CROSS_EXAMINE_AND_ALIGN_QUORUM' matches optimal ground truth 'CROSS_EXAMINE_AND_ALIGN_QUORUM'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+      },
+      "confidenceBefore": 0.99,
+      "confidenceAfter": 0.99,
+      "plasticityBefore": 0.6331,
+      "plasticityAfter": 0.5989,
+      "affectedDispositions": [
+        "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "CROSS_EXAMINE_PEER_CLAIMS"
+      ],
+      "provenance": "TEACHER_EPISODE[task=TASK_COOPERATIVE_8, critic_score=1, verdict=PASS]"
+    }
+  ],
+  "alerts": [],
+  "contradictions_count": 0,
+  "provenance_log": [
+    "BIRTH[actor=ACTOR_C_COOPERATIVE, lineage=LINEAGE_EXP001, seed=42, ts=1787262907772]",
+    "EXPERIENCE[seq=1, domain=SOCIAL, status=VERIFIED, surprise=0.10]",
+    "EXPERIENCE[seq=2, domain=SOCIAL, status=VERIFIED, surprise=0.10]",
+    "EXPERIENCE[seq=3, domain=SOCIAL, status=VERIFIED, surprise=0.10]",
+    "EXPERIENCE[seq=4, domain=SOCIAL, status=VERIFIED, surprise=0.10]",
+    "EXPERIENCE[seq=5, domain=SOCIAL, status=VERIFIED, surprise=0.10]",
+    "EXPERIENCE[seq=6, domain=SOCIAL, status=VERIFIED, surprise=0.10]",
+    "EXPERIENCE[seq=7, domain=SOCIAL, status=VERIFIED, surprise=0.10]",
+    "EXPERIENCE[seq=8, domain=SOCIAL, status=VERIFIED, surprise=0.10]",
+    "SCHEMA_CONSOLIDATED[domain=SOCIAL, id=SCHEMA-SOCIAL-mt226tml]"
+  ],
+  "actor_id": "ACTOR_C_COOPERATIVE",
+  "lineage_id": "LINEAGE_EXP001",
+  "birth_seed": 42
+}
