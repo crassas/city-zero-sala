@@ -119,7 +119,7 @@ jobs:
                   if p:
                       paths.append(p)
           for i in range(0, len(paths), 50):
-              subprocess.run(['git', 'add', '--', *paths[i:i+50]], check=True)
+              subprocess.run(['git', 'add', '-f', '--', *paths[i:i+50]], check=True)
           PY
           rm -rf .city-zero-import
           rm -f .github/workflows/city-zero-safe-import.yml
