@@ -16,15 +16,18 @@ type ImportMetaWithEnv = ImportMeta & {
   env?: Record<string, string | undefined>;
 };
 
+const VERIFIED_SOCIETY_API_BASE_URL = 'https://city-zero-society.travisthejarvis.workers.dev';
+
 function getSocietyApiBaseUrl(): string {
-  const raw = (import.meta as ImportMetaWithEnv).env?.VITE_SOCIETY_API_BASE_URL ?? '';
-  return raw.trim().replace(/\/+$/, '');
+  const configured = (import.meta as ImportMetaWithEnv).env?.VITE_SOCIETY_API_BASE_URL ?? '';
+  const raw = configured.trim() || VERIFIED_SOCIETY_API_BASE_URL;
+  return raw.replace(/\/+$/, '');
 }
 
 export async function checkSocietyHealth(): Promise<SocietyHealthProbe> {
   const baseUrl = getSocietyApiBaseUrl();
   if (!baseUrl) {
-    return { status: 'UNCONFIGURED', error: 'VITE_SOCIETY_API_BASE_URL is not configured' };
+    return { status: 'UNCONFIGURED', error: 'Society API base URL is not configured' };
   }
 
   try {
