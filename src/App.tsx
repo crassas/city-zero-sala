@@ -11,8 +11,8 @@ import { OwnerGatesPanel } from './components/OwnerGatesPanel';
 import { OPERATIONS_CONSOLE_V0_PAYLOAD } from './data/operationsConsoleV0';
 import { IntentHandler } from './components/IntentHandler';
 import { WorkUnit, ProposedAction, DriveConnectionState, CanonicalEntrypoint, Mission, RuntimeEvent } from './types';
-import { initAuth, googleSignIn, logout } from './lib/firebaseAuth';
-import { User } from 'firebase/auth';
+import { auth, initAuth, googleSignIn, logout } from './lib/firebaseAuth';
+import { browserSessionPersistence, setPersistence, User } from 'firebase/auth';
 import { AgentRuntimeInstance } from './runtime/AgenticRuntime';
 import { EventBus } from './game/EventBus';
 import { EvidenceLedger } from './components/EvidenceLedger';
@@ -53,6 +53,7 @@ export default function App() {
   const handleGoogleLogin = async () => {
     try {
       setIsAuthenticating(true);
+      await setPersistence(auth, browserSessionPersistence);
       const res = await googleSignIn();
       if (res) {
         setUser(res.user);
@@ -120,6 +121,7 @@ export default function App() {
   const handleAuthSuccess = async () => {
   setIsAuthenticating(true);
   try {
+    await setPersistence(auth, browserSessionPersistence);
     const result = await googleSignIn();
     if (result) {
       setUser(result.user);
