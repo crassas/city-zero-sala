@@ -1,7 +1,15 @@
+import { browserSessionPersistence, setPersistence } from 'firebase/auth';
 import { EventBus } from '../game/EventBus';
+import { auth } from '../lib/firebaseAuth';
 
 const STORAGE_KEY = 'city_zero_runtime_evidence_v1';
 const MAX_RECORDS = 200;
+
+// Preserve the working Google popup behavior across clean GitHub -> AI Studio
+// syncs by using session storage rather than the IndexedDB-backed default.
+void setPersistence(auth, browserSessionPersistence).catch(error => {
+  console.warn('Unable to set Firebase browser session persistence:', error);
+});
 
 export interface RuntimeEvidenceRecord {
   id: string;
