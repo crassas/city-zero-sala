@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "rule": "Protected agents cannot alter this policy, their own guard, authority, authentication, receipts or constitutional boundaries.",
+  "protectedPaths": [
+    "AGENTS.md",
+    "ACTIVE_CHANGE_SCOPE.json",
+    "PROTECTED_PATHS.json",
+    "PROTECTED_HASHES.json",
+    "scripts/verify_change_scope.mjs",
+    "package.json",
+    "src/lib/firebaseAuth.ts",
+    "src/lib/driveService.ts",
+    "src/runtime/schemas.ts",
+    "src/runtime/AgenticRuntime.ts"
+  ],
+  "proposalOnlyActors": ["GEMINI", "GEMINI_AI_STUDIO"],
+  "ownerOverrideEnvironment": "GRAPH_ENGINEER_OWNER_OVERRIDE"
+}

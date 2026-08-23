@@ -1,0 +1,14 @@
+{
+  "agents": [
+    "ANT_SCOUT_PRIME",
+    "ROUTER_PRIME",
+    "REGISTRY_WORKER",
+    "VERIFIER_GAMMA",
+    "RECEIPT_SEALER",
+    "HEALER_UNIT",
+    "PROPOSAL_MANAGER",
+    "BRAIN_SYNC_WORKER",
+    "COST_AUDITOR",
+    "DISPATCH_UNIT"
+  ]
+}

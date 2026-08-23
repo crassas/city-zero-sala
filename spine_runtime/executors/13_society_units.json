@@ -1,0 +1,93 @@
+[
+  {
+    "nodeId": "SPINE-NODE-01",
+    "unitId": "WU-01",
+    "name": "Recovery Registry Hydration",
+    "agent": "ANT_SCOUT_PRIME",
+    "status": "VERIFIED"
+  },
+  {
+    "nodeId": "SPINE-NODE-02",
+    "unitId": "WU-02",
+    "name": "Constitutional Boundary Auditor",
+    "agent": "CONSTITUTION_AUDITOR",
+    "status": "BLOCKED_BY_GATE"
+  },
+  {
+    "nodeId": "SPINE-NODE-03",
+    "unitId": "WU-03",
+    "name": "Drive Adapter Handshake",
+    "agent": "WORKSPACE_ADAPTER_UNIT",
+    "status": "BLOCKED_BY_GATE"
+  },
+  {
+    "nodeId": "SPINE-NODE-04",
+    "unitId": "WU-04",
+    "name": "Ecosystem Router Pipeline",
+    "agent": "ROUTER_PRIME",
+    "status": "VERIFIED"
+  },
+  {
+    "nodeId": "SPINE-NODE-05",
+    "unitId": "WU-05",
+    "name": "Worker Capability Registry",
+    "agent": "REGISTRY_WORKER",
+    "status": "VERIFIED"
+  },
+  {
+    "nodeId": "SPINE-NODE-06",
+    "unitId": "WU-06",
+    "name": "Evidence Trail Verifier",
+    "agent": "VERIFIER_GAMMA",
+    "status": "VERIFIED"
+  },
+  {
+    "nodeId": "SPINE-NODE-07",
+    "unitId": "WU-07",
+    "name": "Receipt Transaction Sealer",
+    "agent": "RECEIPT_SEALER",
+    "status": "VERIFIED"
+  },
+  {
+    "nodeId": "SPINE-NODE-08",
+    "unitId": "WU-08",
+    "name": "Owner Gate Authorization",
+    "agent": "GATE_KEEPER",
+    "status": "BLOCKED_BY_GATE"
+  },
+  {
+    "nodeId": "SPINE-NODE-09",
+    "unitId": "WU-09",
+    "name": "Stale State Recovery Engine",
+    "agent": "HEALER_UNIT",
+    "status": "VERIFIED"
+  },
+  {
+    "nodeId": "SPINE-NODE-10",
+    "unitId": "WU-10",
+    "name": "Interaction Proposal Queue",
+    "agent": "PROPOSAL_MANAGER",
+    "status": "VERIFIED"
+  },
+  {
+    "nodeId": "SPINE-NODE-11",
+    "unitId": "WU-11",
+    "name": "Graph Brain Sync Bridge",
+    "agent": "BRAIN_SYNC_WORKER",
+    "status": "VERIFIED"
+  },
+  {
+    "nodeId": "SPINE-NODE-12",
+    "unitId": "WU-12",
+    "name": "Free-First Resource Auditor",
+    "agent": "COST_AUDITOR",
+    "status": "VERIFIED"
+  },
+  {
+    "nodeId": "SPINE-NODE-13",
+    "unitId": "WU-13",
+    "name": "Handoff Dispatch Gateway",
+    "agent": "DISPATCH_UNIT",
+    "status": "VERIFIED"
+  }
+]

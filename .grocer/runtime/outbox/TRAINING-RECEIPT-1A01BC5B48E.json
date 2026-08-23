@@ -1,0 +1,34 @@
+{
+  "receipt_id": "TRAINING-RECEIPT-1A01BC5B48E",
+  "mission": "TRAINING_NEEDS_ASSESSMENT_REAL_SOCIETY_EXECUTION",
+  "timestamp": "2026-08-19T20:45:36.781Z",
+  "trainees_assessed": 2,
+  "trained_count": 2,
+  "promoted_count": 2,
+  "failed_count": 0,
+  "trainee_details": [
+    {
+      "inhabitantId": "WORKSPACE_ADAPTER_UNIT",
+      "assignedUnit": "WU-03",
+      "gap": "Drive Scope Adapter & Token Boundary Stale State (DRIVE_ACCESS_NOT_AVAILABLE)",
+      "beforeProbe": "CAPABILITY_PROBE_BEFORE: LIMITED_LOCAL_FALLBACK",
+      "trainingMission": "OAuth Handshake & Resilient Token Refresh Training Protocol",
+      "afterProbe": "CAPABILITY_PROBE_AFTER: OAUTH_ADAPTER_RESILIENT_ACTIVE",
+      "promoted": true
+    },
+    {
+      "inhabitantId": "GATE_KEEPER",
+      "assignedUnit": "WU-08",
+      "gap": "Owner Security & Critical Gate Check Lacks Dynamic Token Validation",
+      "beforeProbe": "CAPABILITY_PROBE_BEFORE: STATIC_GATE_LOCK",
+      "trainingMission": "Dynamic Owner Token Gate Verification Protocol",
+      "afterProbe": "CAPABILITY_PROBE_AFTER: DYNAMIC_GATE_VERIFICATION_PASS",
+      "promoted": true
+    }
+  ],
+  "cryptographic_seal": {
+    "algorithm": "SHA256",
+    "signature": "3784d6aa57eead2651689953e3f70aea37d7f4672e632db89b6ada64bedca7c9"
+  },
+  "drive_readback_verified": true
+}

@@ -1,0 +1,14 @@
+{
+  "missionId": "MISSION-SOCIETY-FRONTEND-BRIDGE-20260822-001",
+  "actor": "CHATGPT",
+  "purpose": "Connect City Zero frontend to the existing verified Society backend",
+  "allowedPaths": [
+    "src/lib/societyApi.ts",
+    "src/components/Header.tsx",
+    "src/App.tsx",
+    ".env.example"
+  ],
+  "expiresAt": "2026-08-23T23:59:59+01:00",
+  "maxChangedFiles": 4,
+  "ownerOverrideRequired": false
+}

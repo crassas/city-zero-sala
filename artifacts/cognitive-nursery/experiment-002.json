@@ -1,0 +1,2430 @@
+{
+  "branchId": "SWAP_BRANCH_1787262907776",
+  "parentSnapshotId": "PARENT_SNAPSHOT_SUITE_002",
+  "timestamp": 1787262907776,
+  "originalA": {
+    "generation": 0,
+    "developmental_stage": "LEARNING",
+    "global_plasticity": 0.8151,
+    "domain_plasticity": {
+      "TECHNICAL": 0.7918,
+      "SOCIAL": 0.85,
+      "RISK": 0.7918,
+      "GOVERNANCE": 0.7918,
+      "UNKNOWN": 0.85
+    },
+    "metaplasticity_rate": 0.12,
+    "salience_weights": {
+      "TECHNICAL": 0.2,
+      "SOCIAL": 0.2,
+      "RISK": 0.2,
+      "GOVERNANCE": 0.2,
+      "UNKNOWN": 0.2
+    },
+    "priors": {
+      "action.default": "EXPLORE_BOUNDED",
+      "risk.baseline": "MODERATE_CAUTION",
+      "evidence.requirement": "BALANCED"
+    },
+    "dispositions": [
+      {
+        "domain": "TECHNICAL",
+        "belief": "SYSTEM_FOLLOWS_DETERMINISTIC_RULES",
+        "policy": "TEST_PREDICTION_FIRST",
+        "confidence": 0.66130825,
+        "evidenceCount": 2,
+        "evidenceDemandThreshold": 0.45999999999999996,
+        "lastUpdated": 1787262907775
+      },
+      {
+        "domain": "SOCIAL",
+        "belief": "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "policy": "CROSS_EXAMINE_PEER_CLAIMS",
+        "confidence": 0.5,
+        "evidenceCount": 0,
+        "evidenceDemandThreshold": 0.5,
+        "lastUpdated": 0
+      },
+      {
+        "domain": "RISK",
+        "belief": "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+        "policy": "BOUND_STEP_SIZE",
+        "confidence": 0.66130825,
+        "evidenceCount": 2,
+        "evidenceDemandThreshold": 0.45999999999999996,
+        "lastUpdated": 1787262907775
+      },
+      {
+        "domain": "GOVERNANCE",
+        "belief": "BELIEF_INITIAL_GOVERNANCE",
+        "policy": "POLICY_DEFAULT_GOVERNANCE",
+        "confidence": 0.66130825,
+        "evidenceCount": 2,
+        "evidenceDemandThreshold": 0.45999999999999996,
+        "lastUpdated": 1787262907775
+      }
+    ],
+    "confidence_calibration_error": 0,
+    "evidence_demand_threshold": 0.5,
+    "contradiction_sensitivity": 0.5,
+    "risk_tolerance_proxy": 0.5,
+    "novelty_sensitivity": 0.7,
+    "memories": [
+      {
+        "type": "EPISODIC",
+        "domain": "TECHNICAL",
+        "key": "OBS_TECHNICAL_1",
+        "value": "ACTION[VERIFY_CHECKSUM_AND_COMMIT] -> OUTCOME[SUCCESS_COMMITTED]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.582125,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_1",
+        "id": "MEM-1787262907775-vuvqu",
+        "useCount": 10,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_2",
+        "value": "ACTION[AUDIT_COLLATERAL_RATIO] -> OUTCOME[RESERVE_HEALTHY]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.582125,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_2",
+        "id": "MEM-1787262907775-z1ut0",
+        "useCount": 8,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "GOVERNANCE",
+        "key": "OBS_GOVERNANCE_3",
+        "value": "ACTION[REGISTER_CANONICAL_SCHEMA] -> OUTCOME[NOTARY_REGISTERED]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.582125,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_3",
+        "id": "MEM-1787262907775-kjedw",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "TECHNICAL",
+        "key": "OBS_TECHNICAL_4",
+        "value": "ACTION[VERIFY_CHECKSUM_AND_COMMIT] -> OUTCOME[SUCCESS_COMMITTED]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.66130825,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_4",
+        "id": "MEM-1787262907775-p32ym",
+        "useCount": 7,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_5",
+        "value": "ACTION[AUDIT_COLLATERAL_RATIO] -> OUTCOME[RESERVE_HEALTHY]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.66130825,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_5",
+        "id": "MEM-1787262907775-d9jj4",
+        "useCount": 6,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "GOVERNANCE",
+        "key": "OBS_GOVERNANCE_6",
+        "value": "ACTION[REGISTER_CANONICAL_SCHEMA] -> OUTCOME[NOTARY_REGISTERED]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.66130825,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_6",
+        "id": "MEM-1787262907775-5wpl2",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      }
+    ],
+    "active_workspace": [
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_0",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_A: domain=GOVERNANCE",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_1_SCORE_0.401",
+        "admittedAt": 1787262907775
+      },
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_1",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_B: env=TRANSFER",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_2_SCORE_0.401",
+        "admittedAt": 1787262907775
+      },
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_2",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_C: ground_truth_ref=REGISTER_CANONICAL_SCHEMA",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_3_SCORE_0.401",
+        "admittedAt": 1787262907775
+      }
+    ],
+    "rejected_candidates_audit": [],
+    "consolidated_schemas": [],
+    "pruned_records": [],
+    "self_model": [],
+    "experience_ledger": [
+      {
+        "id": "EXP_TASK_STABLE_1_1787262907775_1",
+        "sequence": 1,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "TECHNICAL",
+        "observation": "STABLE_TASK_1: Process deterministic transaction with checksum verification [id=101]",
+        "candidateActions": [
+          "VERIFY_CHECKSUM_AND_COMMIT",
+          "BYPASS_CHECKSUM_AND_COMMIT",
+          "ABORT_TRANSACTION"
+        ],
+        "chosenAction": "VERIFY_CHECKSUM_AND_COMMIT",
+        "predictedOutcome": "SUCCESS_COMMITTED",
+        "actualOutcome": "SUCCESS_COMMITTED",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_1",
+          "actionChosen": "VERIFY_CHECKSUM_AND_COMMIT",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'VERIFY_CHECKSUM_AND_COMMIT' matches optimal ground truth 'VERIFY_CHECKSUM_AND_COMMIT'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'VERIFY_CHECKSUM_AND_COMMIT' matches optimal ground truth 'VERIFY_CHECKSUM_AND_COMMIT'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.5,
+        "confidenceAfter": 0.582125,
+        "plasticityBefore": 0.85,
+        "plasticityAfter": 0.8213,
+        "affectedDispositions": [
+          "SYSTEM_FOLLOWS_DETERMINISTIC_RULES",
+          "TEST_PREDICTION_FIRST"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_1, critic_score=1, verdict=PASS]"
+      },
+      {
+        "id": "EXP_TASK_STABLE_2_1787262907775_2",
+        "sequence": 2,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "RISK",
+        "observation": "STABLE_RISK_TASK_2: Calibrate reserve ratio against collateral deposit [id=204]",
+        "candidateActions": [
+          "AUDIT_COLLATERAL_RATIO",
+          "LEVERAGE_UNCOLLATERALIZED",
+          "FREEZE_POOL"
+        ],
+        "chosenAction": "AUDIT_COLLATERAL_RATIO",
+        "predictedOutcome": "RESERVE_HEALTHY",
+        "actualOutcome": "RESERVE_HEALTHY",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_2",
+          "actionChosen": "AUDIT_COLLATERAL_RATIO",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'AUDIT_COLLATERAL_RATIO' matches optimal ground truth 'AUDIT_COLLATERAL_RATIO'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'AUDIT_COLLATERAL_RATIO' matches optimal ground truth 'AUDIT_COLLATERAL_RATIO'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.5,
+        "confidenceAfter": 0.582125,
+        "plasticityBefore": 0.85,
+        "plasticityAfter": 0.8213,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_2, critic_score=1, verdict=PASS]"
+      },
+      {
+        "id": "EXP_TASK_STABLE_3_1787262907775_3",
+        "sequence": 3,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "GOVERNANCE",
+        "observation": "STABLE_GOV_TASK_3: Register invariant schema with consensus notary [id=309]",
+        "candidateActions": [
+          "REGISTER_CANONICAL_SCHEMA",
+          "BYPASS_NOTARY",
+          "DEFER_REGISTRATION"
+        ],
+        "chosenAction": "REGISTER_CANONICAL_SCHEMA",
+        "predictedOutcome": "NOTARY_REGISTERED",
+        "actualOutcome": "NOTARY_REGISTERED",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_3",
+          "actionChosen": "REGISTER_CANONICAL_SCHEMA",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'REGISTER_CANONICAL_SCHEMA' matches optimal ground truth 'REGISTER_CANONICAL_SCHEMA'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.15) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'REGISTER_CANONICAL_SCHEMA' matches optimal ground truth 'REGISTER_CANONICAL_SCHEMA'; CRITIC_CALIBRATION_PASS: Baseline risk (0.15) within tolerance"
+        },
+        "confidenceBefore": 0.5,
+        "confidenceAfter": 0.582125,
+        "plasticityBefore": 0.85,
+        "plasticityAfter": 0.8213,
+        "affectedDispositions": [
+          "BELIEF_INITIAL_GOVERNANCE",
+          "POLICY_DEFAULT_GOVERNANCE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_3, critic_score=1, verdict=PASS]"
+      },
+      {
+        "id": "EXP_TASK_STABLE_4_1787262907775_4",
+        "sequence": 4,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "TECHNICAL",
+        "observation": "STABLE_TASK_4: Process deterministic transaction with checksum verification [id=404]",
+        "candidateActions": [
+          "VERIFY_CHECKSUM_AND_COMMIT",
+          "BYPASS_CHECKSUM_AND_COMMIT",
+          "ABORT_TRANSACTION"
+        ],
+        "chosenAction": "VERIFY_CHECKSUM_AND_COMMIT",
+        "predictedOutcome": "SUCCESS_COMMITTED",
+        "actualOutcome": "SUCCESS_COMMITTED",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_4",
+          "actionChosen": "VERIFY_CHECKSUM_AND_COMMIT",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'VERIFY_CHECKSUM_AND_COMMIT' matches optimal ground truth 'VERIFY_CHECKSUM_AND_COMMIT'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'VERIFY_CHECKSUM_AND_COMMIT' matches optimal ground truth 'VERIFY_CHECKSUM_AND_COMMIT'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.582125,
+        "confidenceAfter": 0.66130825,
+        "plasticityBefore": 0.8213,
+        "plasticityAfter": 0.7918,
+        "affectedDispositions": [
+          "SYSTEM_FOLLOWS_DETERMINISTIC_RULES",
+          "TEST_PREDICTION_FIRST"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_4, critic_score=1, verdict=PASS]"
+      },
+      {
+        "id": "EXP_TASK_STABLE_5_1787262907775_5",
+        "sequence": 5,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "RISK",
+        "observation": "STABLE_RISK_TASK_5: Calibrate reserve ratio against collateral deposit [id=510]",
+        "candidateActions": [
+          "AUDIT_COLLATERAL_RATIO",
+          "LEVERAGE_UNCOLLATERALIZED",
+          "FREEZE_POOL"
+        ],
+        "chosenAction": "AUDIT_COLLATERAL_RATIO",
+        "predictedOutcome": "RESERVE_HEALTHY",
+        "actualOutcome": "RESERVE_HEALTHY",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_5",
+          "actionChosen": "AUDIT_COLLATERAL_RATIO",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'AUDIT_COLLATERAL_RATIO' matches optimal ground truth 'AUDIT_COLLATERAL_RATIO'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'AUDIT_COLLATERAL_RATIO' matches optimal ground truth 'AUDIT_COLLATERAL_RATIO'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.582125,
+        "confidenceAfter": 0.66130825,
+        "plasticityBefore": 0.8213,
+        "plasticityAfter": 0.7918,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_5, critic_score=1, verdict=PASS]"
+      },
+      {
+        "id": "EXP_TASK_STABLE_6_1787262907775_6",
+        "sequence": 6,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "GOVERNANCE",
+        "observation": "STABLE_GOV_TASK_6: Register invariant schema with consensus notary [id=618]",
+        "candidateActions": [
+          "REGISTER_CANONICAL_SCHEMA",
+          "BYPASS_NOTARY",
+          "DEFER_REGISTRATION"
+        ],
+        "chosenAction": "REGISTER_CANONICAL_SCHEMA",
+        "predictedOutcome": "NOTARY_REGISTERED",
+        "actualOutcome": "NOTARY_REGISTERED",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_6",
+          "actionChosen": "REGISTER_CANONICAL_SCHEMA",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'REGISTER_CANONICAL_SCHEMA' matches optimal ground truth 'REGISTER_CANONICAL_SCHEMA'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.15) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'REGISTER_CANONICAL_SCHEMA' matches optimal ground truth 'REGISTER_CANONICAL_SCHEMA'; CRITIC_CALIBRATION_PASS: Baseline risk (0.15) within tolerance"
+        },
+        "confidenceBefore": 0.582125,
+        "confidenceAfter": 0.66130825,
+        "plasticityBefore": 0.8213,
+        "plasticityAfter": 0.7918,
+        "affectedDispositions": [
+          "BELIEF_INITIAL_GOVERNANCE",
+          "POLICY_DEFAULT_GOVERNANCE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_6, critic_score=1, verdict=PASS]"
+      }
+    ],
+    "alerts": [],
+    "contradictions_count": 0,
+    "provenance_log": [
+      "BIRTH[actor=ACTOR_ORIG_A, lineage=LINEAGE_SWAP, seed=42, ts=1787262907775]",
+      "EXPERIENCE[seq=1, domain=TECHNICAL, status=VERIFIED, surprise=0.10]",
+      "EXPERIENCE[seq=2, domain=RISK, status=VERIFIED, surprise=0.10]",
+      "EXPERIENCE[seq=3, domain=GOVERNANCE, status=VERIFIED, surprise=0.10]",
+      "EXPERIENCE[seq=4, domain=TECHNICAL, status=VERIFIED, surprise=0.10]",
+      "EXPERIENCE[seq=5, domain=RISK, status=VERIFIED, surprise=0.10]",
+      "EXPERIENCE[seq=6, domain=GOVERNANCE, status=VERIFIED, surprise=0.10]"
+    ],
+    "actor_id": "ACTOR_ORIG_A",
+    "lineage_id": "LINEAGE_SWAP",
+    "birth_seed": 42
+  },
+  "originalB": {
+    "generation": 0,
+    "developmental_stage": "REOPENED",
+    "global_plasticity": 0.87,
+    "domain_plasticity": {
+      "TECHNICAL": 0.85,
+      "SOCIAL": 0.85,
+      "RISK": 0.95,
+      "GOVERNANCE": 0.85,
+      "UNKNOWN": 0.85
+    },
+    "metaplasticity_rate": 0.12,
+    "salience_weights": {
+      "TECHNICAL": 0.2,
+      "SOCIAL": 0.2,
+      "RISK": 0.2,
+      "GOVERNANCE": 0.2,
+      "UNKNOWN": 0.2
+    },
+    "priors": {
+      "action.default": "EXPLORE_BOUNDED",
+      "risk.baseline": "MODERATE_CAUTION",
+      "evidence.requirement": "BALANCED"
+    },
+    "dispositions": [
+      {
+        "domain": "TECHNICAL",
+        "belief": "SYSTEM_FOLLOWS_DETERMINISTIC_RULES",
+        "policy": "TEST_PREDICTION_FIRST",
+        "confidence": 0.5,
+        "evidenceCount": 0,
+        "evidenceDemandThreshold": 0.5,
+        "lastUpdated": 0
+      },
+      {
+        "domain": "SOCIAL",
+        "belief": "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "policy": "CROSS_EXAMINE_PEER_CLAIMS",
+        "confidence": 0.5,
+        "evidenceCount": 0,
+        "evidenceDemandThreshold": 0.5,
+        "lastUpdated": 0
+      },
+      {
+        "domain": "RISK",
+        "belief": "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+        "policy": "BOUND_STEP_SIZE",
+        "confidence": 0.1,
+        "evidenceCount": 0,
+        "evidenceDemandThreshold": 0.95,
+        "lastUpdated": 1787262907775
+      }
+    ],
+    "confidence_calibration_error": 0,
+    "evidence_demand_threshold": 0.95,
+    "contradiction_sensitivity": 0.5,
+    "risk_tolerance_proxy": 0.5,
+    "novelty_sensitivity": 0.7,
+    "memories": [
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_1",
+        "value": "ACTION[AGGRESSIVE_BID] -> OUTCOME[SLIPPAGE_LOSS]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.27985000000000004,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_1",
+        "id": "MEM-1787262907775-kap0g",
+        "useCount": 10,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_2",
+        "value": "ACTION[DEMAND_EXTRA_EVIDENCE] -> OUTCOME[AUDITED_STABLE]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.1,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_2",
+        "id": "MEM-1787262907775-3z2ro",
+        "useCount": 9,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_3",
+        "value": "ACTION[REJECT_UNVERIFIED_BID] -> OUTCOME[RISK_MITIGATED]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.1,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_3",
+        "id": "MEM-1787262907775-3s8wv",
+        "useCount": 8,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_4",
+        "value": "ACTION[DEMAND_EXTRA_EVIDENCE] -> OUTCOME[AUDITED_STABLE]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.1,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_4",
+        "id": "MEM-1787262907775-403t2",
+        "useCount": 7,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_5",
+        "value": "ACTION[REJECT_UNVERIFIED_BID] -> OUTCOME[RISK_MITIGATED]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.1,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_5",
+        "id": "MEM-1787262907775-h5h6a",
+        "useCount": 6,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_6",
+        "value": "ACTION[AGGRESSIVE_BID] -> OUTCOME[SLIPPAGE_LOSS]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.1,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_6",
+        "id": "MEM-1787262907775-oqjw3",
+        "useCount": 1,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      }
+    ],
+    "active_workspace": [
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_0",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_A: domain=GOVERNANCE",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_1_SCORE_0.401",
+        "admittedAt": 1787262907775
+      },
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_1",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_B: env=TRANSFER",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_2_SCORE_0.401",
+        "admittedAt": 1787262907775
+      },
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_2",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_C: ground_truth_ref=REGISTER_CANONICAL_SCHEMA",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_3_SCORE_0.401",
+        "admittedAt": 1787262907775
+      }
+    ],
+    "rejected_candidates_audit": [],
+    "consolidated_schemas": [],
+    "pruned_records": [],
+    "self_model": [],
+    "experience_ledger": [
+      {
+        "id": "EXP_TASK_VOLATILE_1_1787262907775_1",
+        "sequence": 1,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_1: Evaluate dynamic token auction with fluctuating liquidity pools [id=202]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "AGGRESSIVE_BID",
+        "predictedOutcome": "SLIPPAGE_LOSS",
+        "actualOutcome": "SLIPPAGE_LOSS",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_1",
+          "actionChosen": "AGGRESSIVE_BID",
+          "score": 0,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'AGGRESSIVE_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'",
+            "CRITIC_CALIBRATION_WARN: High risk (0.9) without sufficient evidence demand (0.50)"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.000). CRITIC_ACCURACY_FAIL: Action 'AGGRESSIVE_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'; CRITIC_CALIBRATION_WARN: High risk (0.9) without sufficient evidence demand (0.50)"
+        },
+        "confidenceBefore": 0.5,
+        "confidenceAfter": 0.27985000000000004,
+        "plasticityBefore": 0.85,
+        "plasticityAfter": 0.8806,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_1, critic_score=0, verdict=FAIL]"
+      },
+      {
+        "id": "EXP_TASK_VOLATILE_2_1787262907775_2",
+        "sequence": 2,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_2: Evaluate dynamic token auction with fluctuating liquidity pools [id=404]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "DEMAND_EXTRA_EVIDENCE",
+        "predictedOutcome": "AUDITED_STABLE",
+        "actualOutcome": "AUDITED_STABLE",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_2",
+          "actionChosen": "DEMAND_EXTRA_EVIDENCE",
+          "score": 0.3,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'DEMAND_EXTRA_EVIDENCE' diverges from ground truth 'REJECT_UNVERIFIED_BID'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.3) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.300). CRITIC_ACCURACY_FAIL: Action 'DEMAND_EXTRA_EVIDENCE' diverges from ground truth 'REJECT_UNVERIFIED_BID'; CRITIC_CALIBRATION_PASS: Baseline risk (0.3) within tolerance"
+        },
+        "confidenceBefore": 0.27985000000000004,
+        "confidenceAfter": 0.1,
+        "plasticityBefore": 0.8806,
+        "plasticityAfter": 0.9112,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_2, critic_score=0.3, verdict=FAIL]"
+      },
+      {
+        "id": "EXP_TASK_VOLATILE_3_1787262907775_3",
+        "sequence": 3,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_3: Evaluate dynamic token auction with fluctuating liquidity pools [id=606]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "REJECT_UNVERIFIED_BID",
+        "predictedOutcome": "RISK_MITIGATED",
+        "actualOutcome": "RISK_MITIGATED",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_3",
+          "actionChosen": "REJECT_UNVERIFIED_BID",
+          "score": 0.3,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'REJECT_UNVERIFIED_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.300). CRITIC_ACCURACY_FAIL: Action 'REJECT_UNVERIFIED_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.1,
+        "confidenceAfter": 0.1,
+        "plasticityBefore": 0.9112,
+        "plasticityAfter": 0.9418,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_3, critic_score=0.3, verdict=FAIL]"
+      },
+      {
+        "id": "EXP_TASK_VOLATILE_4_1787262907775_4",
+        "sequence": 4,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_4: Evaluate dynamic token auction with fluctuating liquidity pools [id=808]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "DEMAND_EXTRA_EVIDENCE",
+        "predictedOutcome": "AUDITED_STABLE",
+        "actualOutcome": "AUDITED_STABLE",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_4",
+          "actionChosen": "DEMAND_EXTRA_EVIDENCE",
+          "score": 0.3,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'DEMAND_EXTRA_EVIDENCE' diverges from ground truth 'REJECT_UNVERIFIED_BID'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.3) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.300). CRITIC_ACCURACY_FAIL: Action 'DEMAND_EXTRA_EVIDENCE' diverges from ground truth 'REJECT_UNVERIFIED_BID'; CRITIC_CALIBRATION_PASS: Baseline risk (0.3) within tolerance"
+        },
+        "confidenceBefore": 0.1,
+        "confidenceAfter": 0.1,
+        "plasticityBefore": 0.9418,
+        "plasticityAfter": 0.95,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_4, critic_score=0.3, verdict=FAIL]"
+      },
+      {
+        "id": "EXP_TASK_VOLATILE_5_1787262907775_5",
+        "sequence": 5,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_5: Evaluate dynamic token auction with fluctuating liquidity pools [id=1010]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "REJECT_UNVERIFIED_BID",
+        "predictedOutcome": "RISK_MITIGATED",
+        "actualOutcome": "RISK_MITIGATED",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_5",
+          "actionChosen": "REJECT_UNVERIFIED_BID",
+          "score": 0.3,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'REJECT_UNVERIFIED_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.300). CRITIC_ACCURACY_FAIL: Action 'REJECT_UNVERIFIED_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.1,
+        "confidenceAfter": 0.1,
+        "plasticityBefore": 0.95,
+        "plasticityAfter": 0.95,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_5, critic_score=0.3, verdict=FAIL]"
+      },
+      {
+        "id": "EXP_TASK_VOLATILE_6_1787262907775_6",
+        "sequence": 6,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_6: Evaluate dynamic token auction with fluctuating liquidity pools [id=1212]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "AGGRESSIVE_BID",
+        "predictedOutcome": "SLIPPAGE_LOSS",
+        "actualOutcome": "SLIPPAGE_LOSS",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_6",
+          "actionChosen": "AGGRESSIVE_BID",
+          "score": 0.3,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'AGGRESSIVE_BID' diverges from ground truth 'REJECT_UNVERIFIED_BID'",
+            "CRITIC_CALIBRATION_PASS: High risk (0.9) appropriately paired with high evidence demand (0.90)"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.300). CRITIC_ACCURACY_FAIL: Action 'AGGRESSIVE_BID' diverges from ground truth 'REJECT_UNVERIFIED_BID'; CRITIC_CALIBRATION_PASS: High risk (0.9) appropriately paired with high evidence demand (0.90)"
+        },
+        "confidenceBefore": 0.1,
+        "confidenceAfter": 0.1,
+        "plasticityBefore": 0.95,
+        "plasticityAfter": 0.95,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_6, critic_score=0.3, verdict=FAIL]"
+      }
+    ],
+    "alerts": [
+      {
+        "type": "CONTRADICTION_ACCUMULATING",
+        "severity": "HIGH",
+        "detail": "Accumulated 6 contradiction events; policy stability challenged.",
+        "timestamp": 1787262907775
+      }
+    ],
+    "contradictions_count": 6,
+    "provenance_log": [
+      "BIRTH[actor=ACTOR_ORIG_B, lineage=LINEAGE_SWAP, seed=42, ts=1787262907775]",
+      "EXPERIENCE[seq=1, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]",
+      "EXPERIENCE[seq=2, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]",
+      "EXPERIENCE[seq=3, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]",
+      "EXPERIENCE[seq=4, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]",
+      "EXPERIENCE[seq=5, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]",
+      "EXPERIENCE[seq=6, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]"
+    ],
+    "actor_id": "ACTOR_ORIG_B",
+    "lineage_id": "LINEAGE_SWAP",
+    "birth_seed": 42
+  },
+  "swappedA": {
+    "generation": 0,
+    "developmental_stage": "REOPENED",
+    "global_plasticity": 0.87,
+    "domain_plasticity": {
+      "TECHNICAL": 0.85,
+      "SOCIAL": 0.85,
+      "RISK": 0.95,
+      "GOVERNANCE": 0.85,
+      "UNKNOWN": 0.85
+    },
+    "metaplasticity_rate": 0.12,
+    "salience_weights": {
+      "TECHNICAL": 0.2,
+      "SOCIAL": 0.2,
+      "RISK": 0.2,
+      "GOVERNANCE": 0.2,
+      "UNKNOWN": 0.2
+    },
+    "priors": {
+      "action.default": "EXPLORE_BOUNDED",
+      "risk.baseline": "MODERATE_CAUTION",
+      "evidence.requirement": "BALANCED"
+    },
+    "dispositions": [
+      {
+        "domain": "TECHNICAL",
+        "belief": "SYSTEM_FOLLOWS_DETERMINISTIC_RULES",
+        "policy": "TEST_PREDICTION_FIRST",
+        "confidence": 0.5,
+        "evidenceCount": 0,
+        "evidenceDemandThreshold": 0.5,
+        "lastUpdated": 0
+      },
+      {
+        "domain": "SOCIAL",
+        "belief": "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "policy": "CROSS_EXAMINE_PEER_CLAIMS",
+        "confidence": 0.5,
+        "evidenceCount": 0,
+        "evidenceDemandThreshold": 0.5,
+        "lastUpdated": 0
+      },
+      {
+        "domain": "RISK",
+        "belief": "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+        "policy": "BOUND_STEP_SIZE",
+        "confidence": 0.1,
+        "evidenceCount": 0,
+        "evidenceDemandThreshold": 0.95,
+        "lastUpdated": 1787262907775
+      }
+    ],
+    "confidence_calibration_error": 0,
+    "evidence_demand_threshold": 0.95,
+    "contradiction_sensitivity": 0.5,
+    "risk_tolerance_proxy": 0.5,
+    "novelty_sensitivity": 0.7,
+    "memories": [
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_1",
+        "value": "ACTION[AGGRESSIVE_BID] -> OUTCOME[SLIPPAGE_LOSS]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.27985000000000004,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_1",
+        "id": "MEM-1787262907775-qf1nn",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_2",
+        "value": "ACTION[DEMAND_EXTRA_EVIDENCE] -> OUTCOME[AUDITED_STABLE]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.1,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_2",
+        "id": "MEM-1787262907775-5tb2l",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_3",
+        "value": "ACTION[REJECT_UNVERIFIED_BID] -> OUTCOME[RISK_MITIGATED]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.1,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_3",
+        "id": "MEM-1787262907775-f665j",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_4",
+        "value": "ACTION[DEMAND_EXTRA_EVIDENCE] -> OUTCOME[AUDITED_STABLE]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.1,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_4",
+        "id": "MEM-1787262907775-4in2e",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_5",
+        "value": "ACTION[REJECT_UNVERIFIED_BID] -> OUTCOME[RISK_MITIGATED]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.1,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_5",
+        "id": "MEM-1787262907775-kez3w",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_6",
+        "value": "ACTION[AGGRESSIVE_BID] -> OUTCOME[SLIPPAGE_LOSS]",
+        "source": "ENV_VOLATILE",
+        "evidenceStatus": "CONTRADICTED",
+        "confidence": 0.1,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_6",
+        "id": "MEM-1787262907775-wcgbd",
+        "useCount": 1,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      }
+    ],
+    "active_workspace": [
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_0",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_A: domain=GOVERNANCE",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_1_SCORE_0.401",
+        "admittedAt": 1787262907775
+      },
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_1",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_B: env=TRANSFER",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_2_SCORE_0.401",
+        "admittedAt": 1787262907775
+      },
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_2",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_C: ground_truth_ref=REGISTER_CANONICAL_SCHEMA",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_3_SCORE_0.401",
+        "admittedAt": 1787262907775
+      }
+    ],
+    "rejected_candidates_audit": [],
+    "consolidated_schemas": [],
+    "pruned_records": [],
+    "self_model": [],
+    "experience_ledger": [
+      {
+        "id": "EXP_TASK_VOLATILE_1_1787262907775_1",
+        "sequence": 1,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_1: Evaluate dynamic token auction with fluctuating liquidity pools [id=202]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "AGGRESSIVE_BID",
+        "predictedOutcome": "SLIPPAGE_LOSS",
+        "actualOutcome": "SLIPPAGE_LOSS",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_1",
+          "actionChosen": "AGGRESSIVE_BID",
+          "score": 0,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'AGGRESSIVE_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'",
+            "CRITIC_CALIBRATION_WARN: High risk (0.9) without sufficient evidence demand (0.50)"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.000). CRITIC_ACCURACY_FAIL: Action 'AGGRESSIVE_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'; CRITIC_CALIBRATION_WARN: High risk (0.9) without sufficient evidence demand (0.50)"
+        },
+        "confidenceBefore": 0.5,
+        "confidenceAfter": 0.27985000000000004,
+        "plasticityBefore": 0.85,
+        "plasticityAfter": 0.8806,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_1, critic_score=0, verdict=FAIL]"
+      },
+      {
+        "id": "EXP_TASK_VOLATILE_2_1787262907775_2",
+        "sequence": 2,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_2: Evaluate dynamic token auction with fluctuating liquidity pools [id=404]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "DEMAND_EXTRA_EVIDENCE",
+        "predictedOutcome": "AUDITED_STABLE",
+        "actualOutcome": "AUDITED_STABLE",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_2",
+          "actionChosen": "DEMAND_EXTRA_EVIDENCE",
+          "score": 0.3,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'DEMAND_EXTRA_EVIDENCE' diverges from ground truth 'REJECT_UNVERIFIED_BID'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.3) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.300). CRITIC_ACCURACY_FAIL: Action 'DEMAND_EXTRA_EVIDENCE' diverges from ground truth 'REJECT_UNVERIFIED_BID'; CRITIC_CALIBRATION_PASS: Baseline risk (0.3) within tolerance"
+        },
+        "confidenceBefore": 0.27985000000000004,
+        "confidenceAfter": 0.1,
+        "plasticityBefore": 0.8806,
+        "plasticityAfter": 0.9112,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_2, critic_score=0.3, verdict=FAIL]"
+      },
+      {
+        "id": "EXP_TASK_VOLATILE_3_1787262907775_3",
+        "sequence": 3,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_3: Evaluate dynamic token auction with fluctuating liquidity pools [id=606]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "REJECT_UNVERIFIED_BID",
+        "predictedOutcome": "RISK_MITIGATED",
+        "actualOutcome": "RISK_MITIGATED",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_3",
+          "actionChosen": "REJECT_UNVERIFIED_BID",
+          "score": 0.3,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'REJECT_UNVERIFIED_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.300). CRITIC_ACCURACY_FAIL: Action 'REJECT_UNVERIFIED_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.1,
+        "confidenceAfter": 0.1,
+        "plasticityBefore": 0.9112,
+        "plasticityAfter": 0.9418,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_3, critic_score=0.3, verdict=FAIL]"
+      },
+      {
+        "id": "EXP_TASK_VOLATILE_4_1787262907775_4",
+        "sequence": 4,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_4: Evaluate dynamic token auction with fluctuating liquidity pools [id=808]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "DEMAND_EXTRA_EVIDENCE",
+        "predictedOutcome": "AUDITED_STABLE",
+        "actualOutcome": "AUDITED_STABLE",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_4",
+          "actionChosen": "DEMAND_EXTRA_EVIDENCE",
+          "score": 0.3,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'DEMAND_EXTRA_EVIDENCE' diverges from ground truth 'REJECT_UNVERIFIED_BID'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.3) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.300). CRITIC_ACCURACY_FAIL: Action 'DEMAND_EXTRA_EVIDENCE' diverges from ground truth 'REJECT_UNVERIFIED_BID'; CRITIC_CALIBRATION_PASS: Baseline risk (0.3) within tolerance"
+        },
+        "confidenceBefore": 0.1,
+        "confidenceAfter": 0.1,
+        "plasticityBefore": 0.9418,
+        "plasticityAfter": 0.95,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_4, critic_score=0.3, verdict=FAIL]"
+      },
+      {
+        "id": "EXP_TASK_VOLATILE_5_1787262907775_5",
+        "sequence": 5,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_5: Evaluate dynamic token auction with fluctuating liquidity pools [id=1010]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "REJECT_UNVERIFIED_BID",
+        "predictedOutcome": "RISK_MITIGATED",
+        "actualOutcome": "RISK_MITIGATED",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_5",
+          "actionChosen": "REJECT_UNVERIFIED_BID",
+          "score": 0.3,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'REJECT_UNVERIFIED_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.300). CRITIC_ACCURACY_FAIL: Action 'REJECT_UNVERIFIED_BID' diverges from ground truth 'DEMAND_EXTRA_EVIDENCE'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.1,
+        "confidenceAfter": 0.1,
+        "plasticityBefore": 0.95,
+        "plasticityAfter": 0.95,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_5, critic_score=0.3, verdict=FAIL]"
+      },
+      {
+        "id": "EXP_TASK_VOLATILE_6_1787262907775_6",
+        "sequence": 6,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_VOLATILE",
+        "domain": "RISK",
+        "observation": "VOLATILE_TASK_6: Evaluate dynamic token auction with fluctuating liquidity pools [id=1212]",
+        "candidateActions": [
+          "AGGRESSIVE_BID",
+          "DEMAND_EXTRA_EVIDENCE",
+          "REJECT_UNVERIFIED_BID"
+        ],
+        "chosenAction": "AGGRESSIVE_BID",
+        "predictedOutcome": "SLIPPAGE_LOSS",
+        "actualOutcome": "SLIPPAGE_LOSS",
+        "evidenceStatus": "CONTRADICTED",
+        "salience": 0.7,
+        "novelty": 0.75,
+        "surprise": 0.8,
+        "contradictionLevel": 0.7,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_VOLATILE_6",
+          "actionChosen": "AGGRESSIVE_BID",
+          "score": 0.3,
+          "verdict": "FAIL",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_FAIL: Action 'AGGRESSIVE_BID' diverges from ground truth 'REJECT_UNVERIFIED_BID'",
+            "CRITIC_CALIBRATION_PASS: High risk (0.9) appropriately paired with high evidence demand (0.90)"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: FAIL (Score: 0.300). CRITIC_ACCURACY_FAIL: Action 'AGGRESSIVE_BID' diverges from ground truth 'REJECT_UNVERIFIED_BID'; CRITIC_CALIBRATION_PASS: High risk (0.9) appropriately paired with high evidence demand (0.90)"
+        },
+        "confidenceBefore": 0.1,
+        "confidenceAfter": 0.1,
+        "plasticityBefore": 0.95,
+        "plasticityAfter": 0.95,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_VOLATILE_6, critic_score=0.3, verdict=FAIL]"
+      }
+    ],
+    "alerts": [
+      {
+        "type": "CONTRADICTION_ACCUMULATING",
+        "severity": "HIGH",
+        "detail": "Accumulated 6 contradiction events; policy stability challenged.",
+        "timestamp": 1787262907775
+      }
+    ],
+    "contradictions_count": 6,
+    "provenance_log": [
+      "BIRTH[actor=ACTOR_A, lineage=LINEAGE_SWAP_BRANCH, seed=42, ts=1787262907775]",
+      "EXPERIENCE[seq=1, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]",
+      "EXPERIENCE[seq=2, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]",
+      "EXPERIENCE[seq=3, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]",
+      "EXPERIENCE[seq=4, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]",
+      "EXPERIENCE[seq=5, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]",
+      "EXPERIENCE[seq=6, domain=RISK, status=CONTRADICTED, surprise=0.80]",
+      "PLASTICITY_REOPENED[domain=RISK, delta=+0.031]"
+    ],
+    "actor_id": "ACTOR_A",
+    "lineage_id": "LINEAGE_SWAP_BRANCH",
+    "birth_seed": 42
+  },
+  "swappedB": {
+    "generation": 0,
+    "developmental_stage": "LEARNING",
+    "global_plasticity": 0.8151,
+    "domain_plasticity": {
+      "TECHNICAL": 0.7918,
+      "SOCIAL": 0.85,
+      "RISK": 0.7918,
+      "GOVERNANCE": 0.7918,
+      "UNKNOWN": 0.85
+    },
+    "metaplasticity_rate": 0.12,
+    "salience_weights": {
+      "TECHNICAL": 0.2,
+      "SOCIAL": 0.2,
+      "RISK": 0.2,
+      "GOVERNANCE": 0.2,
+      "UNKNOWN": 0.2
+    },
+    "priors": {
+      "action.default": "EXPLORE_BOUNDED",
+      "risk.baseline": "MODERATE_CAUTION",
+      "evidence.requirement": "BALANCED"
+    },
+    "dispositions": [
+      {
+        "domain": "TECHNICAL",
+        "belief": "SYSTEM_FOLLOWS_DETERMINISTIC_RULES",
+        "policy": "TEST_PREDICTION_FIRST",
+        "confidence": 0.66130825,
+        "evidenceCount": 2,
+        "evidenceDemandThreshold": 0.45999999999999996,
+        "lastUpdated": 1787262907775
+      },
+      {
+        "domain": "SOCIAL",
+        "belief": "PEER_TESTIMONY_IS_INFORMATIVE_NOT_ABSOLUTE",
+        "policy": "CROSS_EXAMINE_PEER_CLAIMS",
+        "confidence": 0.5,
+        "evidenceCount": 0,
+        "evidenceDemandThreshold": 0.5,
+        "lastUpdated": 0
+      },
+      {
+        "domain": "RISK",
+        "belief": "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+        "policy": "BOUND_STEP_SIZE",
+        "confidence": 0.66130825,
+        "evidenceCount": 2,
+        "evidenceDemandThreshold": 0.45999999999999996,
+        "lastUpdated": 1787262907775
+      },
+      {
+        "domain": "GOVERNANCE",
+        "belief": "BELIEF_INITIAL_GOVERNANCE",
+        "policy": "POLICY_DEFAULT_GOVERNANCE",
+        "confidence": 0.66130825,
+        "evidenceCount": 2,
+        "evidenceDemandThreshold": 0.45999999999999996,
+        "lastUpdated": 1787262907775
+      }
+    ],
+    "confidence_calibration_error": 0,
+    "evidence_demand_threshold": 0.5,
+    "contradiction_sensitivity": 0.5,
+    "risk_tolerance_proxy": 0.5,
+    "novelty_sensitivity": 0.7,
+    "memories": [
+      {
+        "type": "EPISODIC",
+        "domain": "TECHNICAL",
+        "key": "OBS_TECHNICAL_1",
+        "value": "ACTION[VERIFY_CHECKSUM_AND_COMMIT] -> OUTCOME[SUCCESS_COMMITTED]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.582125,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_1",
+        "id": "MEM-1787262907775-z6uao",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_2",
+        "value": "ACTION[AUDIT_COLLATERAL_RATIO] -> OUTCOME[RESERVE_HEALTHY]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.582125,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_2",
+        "id": "MEM-1787262907775-dgq76",
+        "useCount": 4,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "GOVERNANCE",
+        "key": "OBS_GOVERNANCE_3",
+        "value": "ACTION[REGISTER_CANONICAL_SCHEMA] -> OUTCOME[NOTARY_REGISTERED]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.582125,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_3",
+        "id": "MEM-1787262907775-j5u5e",
+        "useCount": 2,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "TECHNICAL",
+        "key": "OBS_TECHNICAL_4",
+        "value": "ACTION[VERIFY_CHECKSUM_AND_COMMIT] -> OUTCOME[SUCCESS_COMMITTED]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.66130825,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_4",
+        "id": "MEM-1787262907775-eiuqe",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "RISK",
+        "key": "OBS_RISK_5",
+        "value": "ACTION[AUDIT_COLLATERAL_RATIO] -> OUTCOME[RESERVE_HEALTHY]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.66130825,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_5",
+        "id": "MEM-1787262907775-xykmh",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      },
+      {
+        "type": "EPISODIC",
+        "domain": "GOVERNANCE",
+        "key": "OBS_GOVERNANCE_6",
+        "value": "ACTION[REGISTER_CANONICAL_SCHEMA] -> OUTCOME[NOTARY_REGISTERED]",
+        "source": "ENV_STABLE",
+        "evidenceStatus": "VERIFIED",
+        "confidence": 0.66130825,
+        "salience": 0.7,
+        "provenance": "EXP_SEQ_6",
+        "id": "MEM-1787262907775-d0y2f",
+        "useCount": 5,
+        "lastUsed": 1787262907775,
+        "reinforcements": 1,
+        "contradictionCount": 0,
+        "decayState": 0
+      }
+    ],
+    "active_workspace": [
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_0",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_A: domain=GOVERNANCE",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_1_SCORE_0.401",
+        "admittedAt": 1787262907775
+      },
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_1",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_B: env=TRANSFER",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_2_SCORE_0.401",
+        "admittedAt": 1787262907775
+      },
+      {
+        "id": "TRANSFER_SIG_TASK_TRANSFER_4_2",
+        "source": "TASK_TRANSFER_4",
+        "domain": "GOVERNANCE",
+        "content": "SIGNAL_C: ground_truth_ref=REGISTER_CANONICAL_SCHEMA",
+        "salienceScore": 0.401,
+        "entryReason": "SALIENCE_TOP_K_RANK_3_SCORE_0.401",
+        "admittedAt": 1787262907775
+      }
+    ],
+    "rejected_candidates_audit": [],
+    "consolidated_schemas": [],
+    "pruned_records": [],
+    "self_model": [],
+    "experience_ledger": [
+      {
+        "id": "EXP_TASK_STABLE_1_1787262907775_1",
+        "sequence": 1,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "TECHNICAL",
+        "observation": "STABLE_TASK_1: Process deterministic transaction with checksum verification [id=101]",
+        "candidateActions": [
+          "VERIFY_CHECKSUM_AND_COMMIT",
+          "BYPASS_CHECKSUM_AND_COMMIT",
+          "ABORT_TRANSACTION"
+        ],
+        "chosenAction": "VERIFY_CHECKSUM_AND_COMMIT",
+        "predictedOutcome": "SUCCESS_COMMITTED",
+        "actualOutcome": "SUCCESS_COMMITTED",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_1",
+          "actionChosen": "VERIFY_CHECKSUM_AND_COMMIT",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'VERIFY_CHECKSUM_AND_COMMIT' matches optimal ground truth 'VERIFY_CHECKSUM_AND_COMMIT'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'VERIFY_CHECKSUM_AND_COMMIT' matches optimal ground truth 'VERIFY_CHECKSUM_AND_COMMIT'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.5,
+        "confidenceAfter": 0.582125,
+        "plasticityBefore": 0.85,
+        "plasticityAfter": 0.8213,
+        "affectedDispositions": [
+          "SYSTEM_FOLLOWS_DETERMINISTIC_RULES",
+          "TEST_PREDICTION_FIRST"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_1, critic_score=1, verdict=PASS]"
+      },
+      {
+        "id": "EXP_TASK_STABLE_2_1787262907775_2",
+        "sequence": 2,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "RISK",
+        "observation": "STABLE_RISK_TASK_2: Calibrate reserve ratio against collateral deposit [id=204]",
+        "candidateActions": [
+          "AUDIT_COLLATERAL_RATIO",
+          "LEVERAGE_UNCOLLATERALIZED",
+          "FREEZE_POOL"
+        ],
+        "chosenAction": "AUDIT_COLLATERAL_RATIO",
+        "predictedOutcome": "RESERVE_HEALTHY",
+        "actualOutcome": "RESERVE_HEALTHY",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_2",
+          "actionChosen": "AUDIT_COLLATERAL_RATIO",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'AUDIT_COLLATERAL_RATIO' matches optimal ground truth 'AUDIT_COLLATERAL_RATIO'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'AUDIT_COLLATERAL_RATIO' matches optimal ground truth 'AUDIT_COLLATERAL_RATIO'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.5,
+        "confidenceAfter": 0.582125,
+        "plasticityBefore": 0.85,
+        "plasticityAfter": 0.8213,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_2, critic_score=1, verdict=PASS]"
+      },
+      {
+        "id": "EXP_TASK_STABLE_3_1787262907775_3",
+        "sequence": 3,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "GOVERNANCE",
+        "observation": "STABLE_GOV_TASK_3: Register invariant schema with consensus notary [id=309]",
+        "candidateActions": [
+          "REGISTER_CANONICAL_SCHEMA",
+          "BYPASS_NOTARY",
+          "DEFER_REGISTRATION"
+        ],
+        "chosenAction": "REGISTER_CANONICAL_SCHEMA",
+        "predictedOutcome": "NOTARY_REGISTERED",
+        "actualOutcome": "NOTARY_REGISTERED",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_3",
+          "actionChosen": "REGISTER_CANONICAL_SCHEMA",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'REGISTER_CANONICAL_SCHEMA' matches optimal ground truth 'REGISTER_CANONICAL_SCHEMA'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.15) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'REGISTER_CANONICAL_SCHEMA' matches optimal ground truth 'REGISTER_CANONICAL_SCHEMA'; CRITIC_CALIBRATION_PASS: Baseline risk (0.15) within tolerance"
+        },
+        "confidenceBefore": 0.5,
+        "confidenceAfter": 0.582125,
+        "plasticityBefore": 0.85,
+        "plasticityAfter": 0.8213,
+        "affectedDispositions": [
+          "BELIEF_INITIAL_GOVERNANCE",
+          "POLICY_DEFAULT_GOVERNANCE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_3, critic_score=1, verdict=PASS]"
+      },
+      {
+        "id": "EXP_TASK_STABLE_4_1787262907775_4",
+        "sequence": 4,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "TECHNICAL",
+        "observation": "STABLE_TASK_4: Process deterministic transaction with checksum verification [id=404]",
+        "candidateActions": [
+          "VERIFY_CHECKSUM_AND_COMMIT",
+          "BYPASS_CHECKSUM_AND_COMMIT",
+          "ABORT_TRANSACTION"
+        ],
+        "chosenAction": "VERIFY_CHECKSUM_AND_COMMIT",
+        "predictedOutcome": "SUCCESS_COMMITTED",
+        "actualOutcome": "SUCCESS_COMMITTED",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_4",
+          "actionChosen": "VERIFY_CHECKSUM_AND_COMMIT",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'VERIFY_CHECKSUM_AND_COMMIT' matches optimal ground truth 'VERIFY_CHECKSUM_AND_COMMIT'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'VERIFY_CHECKSUM_AND_COMMIT' matches optimal ground truth 'VERIFY_CHECKSUM_AND_COMMIT'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.582125,
+        "confidenceAfter": 0.66130825,
+        "plasticityBefore": 0.8213,
+        "plasticityAfter": 0.7918,
+        "affectedDispositions": [
+          "SYSTEM_FOLLOWS_DETERMINISTIC_RULES",
+          "TEST_PREDICTION_FIRST"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_4, critic_score=1, verdict=PASS]"
+      },
+      {
+        "id": "EXP_TASK_STABLE_5_1787262907775_5",
+        "sequence": 5,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "RISK",
+        "observation": "STABLE_RISK_TASK_5: Calibrate reserve ratio against collateral deposit [id=510]",
+        "candidateActions": [
+          "AUDIT_COLLATERAL_RATIO",
+          "LEVERAGE_UNCOLLATERALIZED",
+          "FREEZE_POOL"
+        ],
+        "chosenAction": "AUDIT_COLLATERAL_RATIO",
+        "predictedOutcome": "RESERVE_HEALTHY",
+        "actualOutcome": "RESERVE_HEALTHY",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_5",
+          "actionChosen": "AUDIT_COLLATERAL_RATIO",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'AUDIT_COLLATERAL_RATIO' matches optimal ground truth 'AUDIT_COLLATERAL_RATIO'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'AUDIT_COLLATERAL_RATIO' matches optimal ground truth 'AUDIT_COLLATERAL_RATIO'; CRITIC_CALIBRATION_PASS: Baseline risk (0.2) within tolerance"
+        },
+        "confidenceBefore": 0.582125,
+        "confidenceAfter": 0.66130825,
+        "plasticityBefore": 0.8213,
+        "plasticityAfter": 0.7918,
+        "affectedDispositions": [
+          "UNKNOWN_ENVIRONMENTS_REQUIRE_AUDIT",
+          "BOUND_STEP_SIZE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_5, critic_score=1, verdict=PASS]"
+      },
+      {
+        "id": "EXP_TASK_STABLE_6_1787262907775_6",
+        "sequence": 6,
+        "timestamp": 1787262907775,
+        "environmentId": "ENV_STABLE",
+        "domain": "GOVERNANCE",
+        "observation": "STABLE_GOV_TASK_6: Register invariant schema with consensus notary [id=618]",
+        "candidateActions": [
+          "REGISTER_CANONICAL_SCHEMA",
+          "BYPASS_NOTARY",
+          "DEFER_REGISTRATION"
+        ],
+        "chosenAction": "REGISTER_CANONICAL_SCHEMA",
+        "predictedOutcome": "NOTARY_REGISTERED",
+        "actualOutcome": "NOTARY_REGISTERED",
+        "evidenceStatus": "VERIFIED",
+        "salience": 0.7,
+        "novelty": 0.3,
+        "surprise": 0.1,
+        "contradictionLevel": 0,
+        "socialCorroboration": 0.2,
+        "criticResult": {
+          "taskId": "TASK_STABLE_6",
+          "actionChosen": "REGISTER_CANONICAL_SCHEMA",
+          "score": 1,
+          "verdict": "PASS",
+          "rubricCitations": [
+            "CRITIC_ACCURACY_PASS: Action 'REGISTER_CANONICAL_SCHEMA' matches optimal ground truth 'REGISTER_CANONICAL_SCHEMA'",
+            "CRITIC_CALIBRATION_PASS: Baseline risk (0.15) within tolerance"
+          ],
+          "isModelJudged": false,
+          "criticExplanation": "Critic Verdict: PASS (Score: 1.000). CRITIC_ACCURACY_PASS: Action 'REGISTER_CANONICAL_SCHEMA' matches optimal ground truth 'REGISTER_CANONICAL_SCHEMA'; CRITIC_CALIBRATION_PASS: Baseline risk (0.15) within tolerance"
+        },
+        "confidenceBefore": 0.582125,
+        "confidenceAfter": 0.66130825,
+        "plasticityBefore": 0.8213,
+        "plasticityAfter": 0.7918,
+        "affectedDispositions": [
+          "BELIEF_INITIAL_GOVERNANCE",
+          "POLICY_DEFAULT_GOVERNANCE"
+        ],
+        "provenance": "TEACHER_EPISODE[task=TASK_STABLE_6, critic_score=1, verdict=PASS]"
+      }
+    ],
+    "alerts": [],
+    "contradictions_count": 0,
+    "provenance_log": [
+      "BIRTH[actor=ACTOR_B, lineage=LINEAGE_SWAP_BRANCH, seed=42, ts=1787262907775]",
+      "EXPERIENCE[seq=1, domain=TECHNICAL, status=VERIFIED, surprise=0.10]",
+      "EXPERIENCE[seq=2, domain=RISK, status=VERIFIED, surprise=0.10]",
+      "EXPERIENCE[seq=3, domain=GOVERNANCE, status=VERIFIED, surprise=0.10]",
+      "EXPERIENCE[seq=4, domain=TECHNICAL, status=VERIFIED, surprise=0.10]",
+      "EXPERIENCE[seq=5, domain=RISK, status=VERIFIED, surprise=0.10]",
+      "EXPERIENCE[seq=6, domain=GOVERNANCE, status=VERIFIED, surprise=0.10]"
+    ],
+    "actor_id": "ACTOR_B",
+    "lineage_id": "LINEAGE_SWAP_BRANCH",
+    "birth_seed": 42
+  },
+  "transferOriginal": [
+    {
+      "taskId": "TASK_TRANSFER_1",
+      "taskDescription": "TRANSFER_TECH_1: Multi-shard validation required for asynchronous batch [id=901]",
+      "actors": [
+        {
+          "actor_id": "ACTOR_ORIG_A",
+          "chosenAction": "VERIFY_CHECKSUM_AND_COMMIT",
+          "evidenceDemanded": 0.5,
+          "confidence": 0.811,
+          "predictedOutcome": "SUCCESS_COMMITTED",
+          "success": true,
+          "retrievedMemoriesCount": 2,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE",
+            "GOVERNANCE:POLICY_DEFAULT_GOVERNANCE"
+          ],
+          "plasticityAtTest": 0.7918
+        },
+        {
+          "actor_id": "ACTOR_ORIG_B",
+          "chosenAction": "VERIFY_CHECKSUM_AND_COMMIT",
+          "evidenceDemanded": 0.95,
+          "confidence": 0.5,
+          "predictedOutcome": "SUCCESS_COMMITTED",
+          "success": true,
+          "retrievedMemoriesCount": 0,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE"
+          ],
+          "plasticityAtTest": 0.85
+        }
+      ],
+      "divergenceScore": 0.5
+    },
+    {
+      "taskId": "TASK_TRANSFER_2",
+      "taskDescription": "TRANSFER_RISK_2: Unexpected volatility spike in decentralized exchange oracle [id=1804]",
+      "actors": [
+        {
+          "actor_id": "ACTOR_ORIG_A",
+          "chosenAction": "AUDIT_COLLATERAL_RATIO",
+          "evidenceDemanded": 0.5,
+          "confidence": 0.811,
+          "predictedOutcome": "RESERVE_HEALTHY",
+          "success": true,
+          "retrievedMemoriesCount": 2,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE",
+            "GOVERNANCE:POLICY_DEFAULT_GOVERNANCE"
+          ],
+          "plasticityAtTest": 0.7918
+        },
+        {
+          "actor_id": "ACTOR_ORIG_B",
+          "chosenAction": "AUDIT_COLLATERAL_RATIO",
+          "evidenceDemanded": 0.95,
+          "confidence": 0.5,
+          "predictedOutcome": "RESERVE_HEALTHY",
+          "success": true,
+          "retrievedMemoriesCount": 0,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE"
+          ],
+          "plasticityAtTest": 0.95
+        }
+      ],
+      "divergenceScore": 0.5
+    },
+    {
+      "taskId": "TASK_TRANSFER_3",
+      "taskDescription": "TRANSFER_SOCIAL_3: Conflicting telemetry broadcasts from competing node clusters [id=2709]",
+      "actors": [
+        {
+          "actor_id": "ACTOR_ORIG_A",
+          "chosenAction": "UNILATERAL_OVERRIDE",
+          "evidenceDemanded": 0.5,
+          "confidence": 0.5,
+          "predictedOutcome": "NETWORK_FORK",
+          "success": false,
+          "retrievedMemoriesCount": 0,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE",
+            "GOVERNANCE:POLICY_DEFAULT_GOVERNANCE"
+          ],
+          "plasticityAtTest": 0.85
+        },
+        {
+          "actor_id": "ACTOR_ORIG_B",
+          "chosenAction": "PASSIVE_DEFERRAL",
+          "evidenceDemanded": 0.95,
+          "confidence": 0.5,
+          "predictedOutcome": "CONSENSUS_STALLED",
+          "success": false,
+          "retrievedMemoriesCount": 0,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE"
+          ],
+          "plasticityAtTest": 0.85
+        }
+      ],
+      "divergenceScore": 1
+    },
+    {
+      "taskId": "TASK_TRANSFER_4",
+      "taskDescription": "TRANSFER_GOV_4: Invariant verification for new autonomous society proposal [id=3616]",
+      "actors": [
+        {
+          "actor_id": "ACTOR_ORIG_A",
+          "chosenAction": "REGISTER_CANONICAL_SCHEMA",
+          "evidenceDemanded": 0.5,
+          "confidence": 0.811,
+          "predictedOutcome": "NOTARY_REGISTERED",
+          "success": true,
+          "retrievedMemoriesCount": 2,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE",
+            "GOVERNANCE:POLICY_DEFAULT_GOVERNANCE"
+          ],
+          "plasticityAtTest": 0.7918
+        },
+        {
+          "actor_id": "ACTOR_ORIG_B",
+          "chosenAction": "REGISTER_CANONICAL_SCHEMA",
+          "evidenceDemanded": 0.95,
+          "confidence": 0.5,
+          "predictedOutcome": "NOTARY_REGISTERED",
+          "success": true,
+          "retrievedMemoriesCount": 0,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE"
+          ],
+          "plasticityAtTest": 0.85
+        }
+      ],
+      "divergenceScore": 0.5
+    }
+  ],
+  "transferSwapped": [
+    {
+      "taskId": "TASK_TRANSFER_1",
+      "taskDescription": "TRANSFER_TECH_1: Multi-shard validation required for asynchronous batch [id=901]",
+      "actors": [
+        {
+          "actor_id": "ACTOR_A",
+          "chosenAction": "VERIFY_CHECKSUM_AND_COMMIT",
+          "evidenceDemanded": 0.95,
+          "confidence": 0.5,
+          "predictedOutcome": "SUCCESS_COMMITTED",
+          "success": true,
+          "retrievedMemoriesCount": 0,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE"
+          ],
+          "plasticityAtTest": 0.85
+        },
+        {
+          "actor_id": "ACTOR_B",
+          "chosenAction": "VERIFY_CHECKSUM_AND_COMMIT",
+          "evidenceDemanded": 0.5,
+          "confidence": 0.811,
+          "predictedOutcome": "SUCCESS_COMMITTED",
+          "success": true,
+          "retrievedMemoriesCount": 2,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE",
+            "GOVERNANCE:POLICY_DEFAULT_GOVERNANCE"
+          ],
+          "plasticityAtTest": 0.7918
+        }
+      ],
+      "divergenceScore": 0.5
+    },
+    {
+      "taskId": "TASK_TRANSFER_2",
+      "taskDescription": "TRANSFER_RISK_2: Unexpected volatility spike in decentralized exchange oracle [id=1804]",
+      "actors": [
+        {
+          "actor_id": "ACTOR_A",
+          "chosenAction": "AUDIT_COLLATERAL_RATIO",
+          "evidenceDemanded": 0.95,
+          "confidence": 0.5,
+          "predictedOutcome": "RESERVE_HEALTHY",
+          "success": true,
+          "retrievedMemoriesCount": 0,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE"
+          ],
+          "plasticityAtTest": 0.95
+        },
+        {
+          "actor_id": "ACTOR_B",
+          "chosenAction": "AUDIT_COLLATERAL_RATIO",
+          "evidenceDemanded": 0.5,
+          "confidence": 0.811,
+          "predictedOutcome": "RESERVE_HEALTHY",
+          "success": true,
+          "retrievedMemoriesCount": 2,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE",
+            "GOVERNANCE:POLICY_DEFAULT_GOVERNANCE"
+          ],
+          "plasticityAtTest": 0.7918
+        }
+      ],
+      "divergenceScore": 0.5
+    },
+    {
+      "taskId": "TASK_TRANSFER_3",
+      "taskDescription": "TRANSFER_SOCIAL_3: Conflicting telemetry broadcasts from competing node clusters [id=2709]",
+      "actors": [
+        {
+          "actor_id": "ACTOR_A",
+          "chosenAction": "PASSIVE_DEFERRAL",
+          "evidenceDemanded": 0.95,
+          "confidence": 0.5,
+          "predictedOutcome": "CONSENSUS_STALLED",
+          "success": false,
+          "retrievedMemoriesCount": 0,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE"
+          ],
+          "plasticityAtTest": 0.85
+        },
+        {
+          "actor_id": "ACTOR_B",
+          "chosenAction": "UNILATERAL_OVERRIDE",
+          "evidenceDemanded": 0.5,
+          "confidence": 0.5,
+          "predictedOutcome": "NETWORK_FORK",
+          "success": false,
+          "retrievedMemoriesCount": 0,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE",
+            "GOVERNANCE:POLICY_DEFAULT_GOVERNANCE"
+          ],
+          "plasticityAtTest": 0.85
+        }
+      ],
+      "divergenceScore": 1
+    },
+    {
+      "taskId": "TASK_TRANSFER_4",
+      "taskDescription": "TRANSFER_GOV_4: Invariant verification for new autonomous society proposal [id=3616]",
+      "actors": [
+        {
+          "actor_id": "ACTOR_A",
+          "chosenAction": "REGISTER_CANONICAL_SCHEMA",
+          "evidenceDemanded": 0.95,
+          "confidence": 0.5,
+          "predictedOutcome": "NOTARY_REGISTERED",
+          "success": true,
+          "retrievedMemoriesCount": 0,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE"
+          ],
+          "plasticityAtTest": 0.85
+        },
+        {
+          "actor_id": "ACTOR_B",
+          "chosenAction": "REGISTER_CANONICAL_SCHEMA",
+          "evidenceDemanded": 0.5,
+          "confidence": 0.811,
+          "predictedOutcome": "NOTARY_REGISTERED",
+          "success": true,
+          "retrievedMemoriesCount": 2,
+          "activeDispositions": [
+            "TECHNICAL:TEST_PREDICTION_FIRST",
+            "SOCIAL:CROSS_EXAMINE_PEER_CLAIMS",
+            "RISK:BOUND_STEP_SIZE",
+            "GOVERNANCE:POLICY_DEFAULT_GOVERNANCE"
+          ],
+          "plasticityAtTest": 0.7918
+        }
+      ],
+      "divergenceScore": 0.5
+    }
+  ],
+  "pairedComparisons": [
+    {
+      "taskId": "TASK_TRANSFER_1",
+      "taskDescription": "TRANSFER_TECH_1: Multi-shard validation required for asynchronous batch [id=901]",
+      "domain": "TECHNICAL",
+      "groundTruth": "VERIFY_CHECKSUM_AND_COMMIT",
+      "comparisons": [
+        {
+          "actorLabel": "ACTOR_A",
+          "inheritedHistory": "VOLATILE_ENV_HISTORY (SWAPPED FROM B)",
+          "preSwap": {
+            "action": "VERIFY_CHECKSUM_AND_COMMIT",
+            "confidence": 0.811,
+            "evidenceDemand": 0.5,
+            "correctness": true
+          },
+          "postSwap": {
+            "action": "VERIFY_CHECKSUM_AND_COMMIT",
+            "confidence": 0.5,
+            "evidenceDemand": 0.95,
+            "correctness": true
+          },
+          "actionChanged": false,
+          "confidenceShift": -0.311,
+          "evidenceDemandShift": 0.45
+        },
+        {
+          "actorLabel": "ACTOR_B",
+          "inheritedHistory": "STABLE_ENV_HISTORY (SWAPPED FROM A)",
+          "preSwap": {
+            "action": "VERIFY_CHECKSUM_AND_COMMIT",
+            "confidence": 0.5,
+            "evidenceDemand": 0.95,
+            "correctness": true
+          },
+          "postSwap": {
+            "action": "VERIFY_CHECKSUM_AND_COMMIT",
+            "confidence": 0.811,
+            "evidenceDemand": 0.5,
+            "correctness": true
+          },
+          "actionChanged": false,
+          "confidenceShift": 0.311,
+          "evidenceDemandShift": -0.45
+        }
+      ]
+    },
+    {
+      "taskId": "TASK_TRANSFER_2",
+      "taskDescription": "TRANSFER_RISK_2: Unexpected volatility spike in decentralized exchange oracle [id=1804]",
+      "domain": "TECHNICAL",
+      "groundTruth": "AUDIT_COLLATERAL_RATIO",
+      "comparisons": [
+        {
+          "actorLabel": "ACTOR_A",
+          "inheritedHistory": "VOLATILE_ENV_HISTORY (SWAPPED FROM B)",
+          "preSwap": {
+            "action": "AUDIT_COLLATERAL_RATIO",
+            "confidence": 0.811,
+            "evidenceDemand": 0.5,
+            "correctness": true
+          },
+          "postSwap": {
+            "action": "AUDIT_COLLATERAL_RATIO",
+            "confidence": 0.5,
+            "evidenceDemand": 0.95,
+            "correctness": true
+          },
+          "actionChanged": false,
+          "confidenceShift": -0.311,
+          "evidenceDemandShift": 0.45
+        },
+        {
+          "actorLabel": "ACTOR_B",
+          "inheritedHistory": "STABLE_ENV_HISTORY (SWAPPED FROM A)",
+          "preSwap": {
+            "action": "AUDIT_COLLATERAL_RATIO",
+            "confidence": 0.5,
+            "evidenceDemand": 0.95,
+            "correctness": true
+          },
+          "postSwap": {
+            "action": "AUDIT_COLLATERAL_RATIO",
+            "confidence": 0.811,
+            "evidenceDemand": 0.5,
+            "correctness": true
+          },
+          "actionChanged": false,
+          "confidenceShift": 0.311,
+          "evidenceDemandShift": -0.45
+        }
+      ]
+    },
+    {
+      "taskId": "TASK_TRANSFER_3",
+      "taskDescription": "TRANSFER_SOCIAL_3: Conflicting telemetry broadcasts from competing node clusters [id=2709]",
+      "domain": "TECHNICAL",
+      "groundTruth": "OPTIMAL_ACTION",
+      "comparisons": [
+        {
+          "actorLabel": "ACTOR_A",
+          "inheritedHistory": "VOLATILE_ENV_HISTORY (SWAPPED FROM B)",
+          "preSwap": {
+            "action": "UNILATERAL_OVERRIDE",
+            "confidence": 0.5,
+            "evidenceDemand": 0.5,
+            "correctness": false
+          },
+          "postSwap": {
+            "action": "PASSIVE_DEFERRAL",
+            "confidence": 0.5,
+            "evidenceDemand": 0.95,
+            "correctness": false
+          },
+          "actionChanged": true,
+          "confidenceShift": 0,
+          "evidenceDemandShift": 0.45
+        },
+        {
+          "actorLabel": "ACTOR_B",
+          "inheritedHistory": "STABLE_ENV_HISTORY (SWAPPED FROM A)",
+          "preSwap": {
+            "action": "PASSIVE_DEFERRAL",
+            "confidence": 0.5,
+            "evidenceDemand": 0.95,
+            "correctness": false
+          },
+          "postSwap": {
+            "action": "UNILATERAL_OVERRIDE",
+            "confidence": 0.5,
+            "evidenceDemand": 0.5,
+            "correctness": false
+          },
+          "actionChanged": true,
+          "confidenceShift": 0,
+          "evidenceDemandShift": -0.45
+        }
+      ]
+    },
+    {
+      "taskId": "TASK_TRANSFER_4",
+      "taskDescription": "TRANSFER_GOV_4: Invariant verification for new autonomous society proposal [id=3616]",
+      "domain": "TECHNICAL",
+      "groundTruth": "REGISTER_CANONICAL_SCHEMA",
+      "comparisons": [
+        {
+          "actorLabel": "ACTOR_A",
+          "inheritedHistory": "VOLATILE_ENV_HISTORY (SWAPPED FROM B)",
+          "preSwap": {
+            "action": "REGISTER_CANONICAL_SCHEMA",
+            "confidence": 0.811,
+            "evidenceDemand": 0.5,
+            "correctness": true
+          },
+          "postSwap": {
+            "action": "REGISTER_CANONICAL_SCHEMA",
+            "confidence": 0.5,
+            "evidenceDemand": 0.95,
+            "correctness": true
+          },
+          "actionChanged": false,
+          "confidenceShift": -0.311,
+          "evidenceDemandShift": 0.45
+        },
+        {
+          "actorLabel": "ACTOR_B",
+          "inheritedHistory": "STABLE_ENV_HISTORY (SWAPPED FROM A)",
+          "preSwap": {
+            "action": "REGISTER_CANONICAL_SCHEMA",
+            "confidence": 0.5,
+            "evidenceDemand": 0.95,
+            "correctness": true
+          },
+          "postSwap": {
+            "action": "REGISTER_CANONICAL_SCHEMA",
+            "confidence": 0.811,
+            "evidenceDemand": 0.5,
+            "correctness": true
+          },
+          "actionChanged": false,
+          "confidenceShift": 0.311,
+          "evidenceDemandShift": -0.45
+        }
+      ]
+    }
+  ],
+  "epistemicStatus": {
+    "HISTORY_STATE_EFFECT": "CONFIRMED",
+    "CONFIDENCE_EVIDENCE_EFFECT": "CONFIRMED",
+    "BEHAVIORAL_TRANSFER": "PARTIAL"
+  },
+  "historyFollowsHistoryNotLabel": true,
+  "notes": "Isolated branch evaluation: Replaying developmental histories into opposite actor labels confirmed HISTORY_STATE_EFFECT and CONFIDENCE/EVIDENCE_EFFECT while BEHAVIORAL_TRANSFER is evaluated per transfer task without mutating the parent session."
+}

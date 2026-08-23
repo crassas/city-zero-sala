@@ -1,0 +1,6 @@
+{
+  "name": "Graph Engineer Worker Console",
+  "description": "Minimal operational interface for Graph Engineer ecosystem worker missions and task routing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

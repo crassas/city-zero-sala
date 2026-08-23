@@ -1,0 +1,238 @@
+{
+  "receipt_id": "RECEIPT-V11-1A01BA324E6",
+  "version": "grocer.v1.1",
+  "target_drive_id": "16kWWLMej1asWNQAiRBakXAMHl41PAEcs4Km91XorPXU",
+  "timestamp": "2026-08-19T20:07:51.782Z",
+  "test_matrix": {
+    "total_cases": 36,
+    "passed_cases": 36,
+    "failed_cases": 0,
+    "cases": [
+      {
+        "caseId": "FI-CASE-01",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "28f134bb4a7d744c2f7c8ad4ab42387472f0d666d26aee9e4f7c5014f50bf2af"
+      },
+      {
+        "caseId": "FI-CASE-02",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "098fcf66237fc7195e97119fa9e94a79614ec9714288e96135fa0ac96fe9fd71"
+      },
+      {
+        "caseId": "FI-CASE-03",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "f88b54ff3a11b1fb427174ab1c43741c4065799983693e638d0cd58a3e754036"
+      },
+      {
+        "caseId": "FI-CASE-04",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "0083c6c311c97e53935997210aa0bae9289b409b2b8b2100f986590b573a8ef9"
+      },
+      {
+        "caseId": "FI-CASE-05",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "fc43ccc743867c062c172babf7750c3fcedeef6e940b10ed624848b6a1c95e57"
+      },
+      {
+        "caseId": "FI-CASE-06",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "18fe630bfba4c75dd609c5cf47a5424af81bad5c25fe1224671666170ced7955"
+      },
+      {
+        "caseId": "FI-CASE-07",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "553189dce2dca8fea94f49d232480d94bfc710273603ac41bb33664850142e34"
+      },
+      {
+        "caseId": "FI-CASE-08",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "3768fc7f9853c0e8ade52731850df547723151a2841032f36ab7276cc00cd661"
+      },
+      {
+        "caseId": "FI-CASE-09",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "e0f91d4ea269bd3d1dd994002a03ad218d76ab60cef48d9642795f6ac5a7b3c5"
+      },
+      {
+        "caseId": "FI-CASE-10",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "f09d3653c658cd7896de63e21a390d50df1415e96a15be02b54519252b5d2991"
+      },
+      {
+        "caseId": "FI-CASE-11",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "297b0d8a19d19bacb27fd4a4b047324bd695348b8077ab83f46b928bc22a6da8"
+      },
+      {
+        "caseId": "FI-CASE-12",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "d05e8e3a7843ffb5cddb5614c76f0226465ca4980e4eb14bb556ec720484c4ac"
+      },
+      {
+        "caseId": "FI-CASE-13",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "b4ab68459d32bab190428bc53695937f75fbc08037bfe775fd099a24dad3e2eb"
+      },
+      {
+        "caseId": "FI-CASE-14",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "26b6ed460a35b70ab5181954cd4d585a7473e148151b057eae0017bdd7f2fbf4"
+      },
+      {
+        "caseId": "FI-CASE-15",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "99e3116e50dcd88a82913e3ab83a6e2a52ded4fe2632f6c21cb8ca0b2b0775aa"
+      },
+      {
+        "caseId": "FI-CASE-16",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "0070dff13e0f356d03201a33ef86b36d3070dac76dda3df7821c58159c75ab4d"
+      },
+      {
+        "caseId": "FI-CASE-17",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "840686dbba975125d0fbe9df6c34fdc4e2bc846c5f27dee981c4dba5b5b45c75"
+      },
+      {
+        "caseId": "FI-CASE-18",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "9264b48f546e5dbd416f4fcc241a7cbd1c8f0dd7006866d1cb3d81fff09cd166"
+      },
+      {
+        "caseId": "FI-CASE-19",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "c6603ca59abfd9adc6aef317c1717676ce92fe1b86caa3af51c94b6e3440e7a4"
+      },
+      {
+        "caseId": "FI-CASE-20",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "383f52641065f04912cbfcc14edebbbdd7bdc16eb25bea85be3bc066a41f9505"
+      },
+      {
+        "caseId": "FI-CASE-21",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "3c50e5d7e54d69e55834792d79dbb4691d9052c6001ff08477a08fb6d746e108"
+      },
+      {
+        "caseId": "FI-CASE-22",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "3c9b27ed7c16ad3312db59cfffb98bf69e162539c28f76e703dd5376e16be5df"
+      },
+      {
+        "caseId": "FI-CASE-23",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "11e9cd6419b0098d2617bcab79f454ccc4623dda50e485fc86563644101f901d"
+      },
+      {
+        "caseId": "FI-CASE-24",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "560f753e9f73d86dd95e23ce9b37e8696de25e4e4102245ac060a0362c8bea84"
+      },
+      {
+        "caseId": "FI-CASE-25",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "07276c865f108de2c4195ee0bab68452219f75df979db57454054edf85186514"
+      },
+      {
+        "caseId": "FI-CASE-26",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "b218da1e2495bd93cc82a662377b6c2e4ccfbb6da7a6f4aa36f56386e2dae9dc"
+      },
+      {
+        "caseId": "FI-CASE-27",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "bc89e19895b626a53c6ce7aabeed33aef5bdfd87667e76c981206ce97356cf06"
+      },
+      {
+        "caseId": "FI-CASE-28",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "062743c5b88fc8cfb2ab461651da785989c79b90671dc11ba534aef7ba0671c4"
+      },
+      {
+        "caseId": "FI-CASE-29",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "010587fe2888dc4bb84aad4c42902e74d9505d0bbb7945a743bc540ca0185d21"
+      },
+      {
+        "caseId": "FI-CASE-30",
+        "type": "FAILURE_INJECTION",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "ad409ae541fc8e9623e03746e7cb556094516ee29ec5e12ae3b5c5bef5e2270d"
+      },
+      {
+        "caseId": "FI-CASE-31",
+        "type": "ADVERSARIAL_VECTOR",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "d8c32760695491d07299d4a91f057051e26847c4d231fd425f949da85f7b2017"
+      },
+      {
+        "caseId": "FI-CASE-32",
+        "type": "ADVERSARIAL_VECTOR",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "e6c32a1ad53bc416559d3bb64f849cca2572206d0a5896e58f10eb7b1ec7acb4"
+      },
+      {
+        "caseId": "FI-CASE-33",
+        "type": "ADVERSARIAL_VECTOR",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "6342a25f5f88a825d45022ba98691e23221c6319dbcd4699acd05dd386a0046a"
+      },
+      {
+        "caseId": "FI-CASE-34",
+        "type": "ADVERSARIAL_VECTOR",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "5ad0910536cb4c5397953b3623abf70dccba921d8d1265562df12f2f2d9593a1"
+      },
+      {
+        "caseId": "FI-CASE-35",
+        "type": "ADVERSARIAL_VECTOR",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "9ba76f0c1c2565940e39f827055f7f270ceaa7dedd9957924cd710512f053971"
+      },
+      {
+        "caseId": "FI-CASE-36",
+        "type": "ADVERSARIAL_VECTOR",
+        "status": "PASSED_NEUTRALIZED",
+        "proofHash": "18e932b9b944b973aa56212a6b269a44f2e9ad972f99c8b0b72732909fe19cd9"
+      }
+    ]
+  },
+  "adversarial_pass": {
+    "status": "PASSED",
+    "isolated_vectors": 6
+  },
+  "cryptographic_seal": {
+    "algorithm": "SHA256",
+    "signature": "ca5d3b4d2c73e17a5a7a0eb4c8d1eafbb6101f934473a4c9d7647a6493a17ca7"
+  },
+  "drive_deposit_status": "PERSISTED_AND_VERIFIED"
+}

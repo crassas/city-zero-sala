@@ -1,0 +1,11 @@
+{
+  "AGENTS.md": "63d4677a9555b541fa9ca9d7a7fde280654a9736f8c84aed7ad856fc9bea474f",
+  "ACTIVE_CHANGE_SCOPE.json": "903afe0432d152cbd02aa0bf7bea381b748a108fd5c5e307d5002def1ed2b459",
+  "PROTECTED_PATHS.json": "ac6008c279e465bf61525c8d6b5c4af3811eff06bbd12379e19fbaa06508d1ee",
+  "verify_change_scope.mjs": "d5fdc37aaeac1cfc436b6d894f8d947fc9b5038e5588f359bbe9907375082707",
+  "package.json": "4e0af8b1ec1003122f290b40f47a83a853cba738c28c5dc8214ef41445d615b2",
+  "src/lib/firebaseAuth.ts": "86d5b72dcfb0a14e891bb0f8389c9da927243e361ca5cc1bde081b6b6d6372fc",
+  "src/lib/driveService.ts": "4415528a2af45c22873fd780077a62bc87e848d4fe6779149bf145f7cfe4b0b6",
+  "src/runtime/schemas.ts": "4bfad36aa2bf9b542a1c919e60c3779c68fb5625a61c28525f347b3e8926f71d",
+  "src/runtime/AgenticRuntime.ts": "888e38bda79c3200209a181119ee9e5f0ca836ba512f83cfc46855893b74aad3"
+}
