@@ -182,6 +182,28 @@ const handleExecuteTarget = (driveId: string, customPayloadText?: string) => {
               <p className="text-xs text-zinc-400">Explora as casas e vê o que cada uma representa.</p>
             </div>
             <div className="flex gap-2">
+              <button
+                onClick={handleRunAgentRuntimeTest}
+                disabled={
+                  driveStatus !== 'CONNECTED' ||
+                  !user ||
+                  runtimeMessage === 'REQUESTING ADMISSION' ||
+                  runtimeMessage === 'RUNNING VERIFIED LOOP'
+                }
+                className={`px-4 py-2 rounded font-bold text-xs shadow-md transition-colors ${
+                  driveStatus !== 'CONNECTED' || !user
+                    ? 'bg-zinc-800 text-zinc-500 cursor-not-allowed border border-zinc-700'
+                    : runtimeMessage === 'REQUESTING ADMISSION' || runtimeMessage === 'RUNNING VERIFIED LOOP'
+                      ? 'bg-amber-600 text-white cursor-wait'
+                      : 'bg-emerald-600 hover:bg-emerald-500 text-white'
+                }`}
+              >
+                {driveStatus !== 'CONNECTED' || !user
+                  ? 'SEND WORKER · AUTH REQUIRED'
+                  : runtimeMessage === 'REQUESTING ADMISSION' || runtimeMessage === 'RUNNING VERIFIED LOOP'
+                    ? 'WORKER EM ROTA…'
+                    : 'SEND WORKER'}
+              </button>
               <button 
                 onClick={() => setViewMode('LEDGER')}
                 className="bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded font-bold text-xs shadow-md transition-colors"
