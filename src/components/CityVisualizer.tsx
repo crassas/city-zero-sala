@@ -26,7 +26,9 @@ const CITY_WORK_UNIT_SLOTS = [
   { x: 294, y: 892 }, { x: 612, y: 892 }, { x: 856, y: 892 }, { x: 1094, y: 892 }, { x: 1332, y: 892 }
 ];
 
-const WORKER_DEPOT = { x: 960, y: 1110 };
+// Keep the completed worker in the visible centre of the city so a persisted
+// runtime result remains inspectable even after the live Drive session expires.
+const WORKER_DEPOT = { x: 960, y: 730 };
 const WORKER_EVENT_TYPES = new Set([
   'ADMITTED', 'CLAIMED', 'WORKING', 'RECEIPT_CREATED', 'READBACK_VERIFIED', 'BLOCKED', 'COMPLETED'
 ]);
@@ -44,6 +46,7 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
     () => runtimeEvidence.find(record => record.source === 'agentic-runtime' && WORKER_EVENT_TYPES.has(record.eventType.toUpperCase())),
     [runtimeEvidence]
   );
+  const runtimeConnected = driveStatus === 'CONNECTED';
 
   useEffect(() => RuntimeEvidenceStore.subscribe(setRuntimeEvidence), []);
 
@@ -96,7 +99,9 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
       const scene = gameRef.current?.scene.getScene('CityScene') as CityScene | undefined;
       if (!scene || !scene.scene.isActive()) return;
 
-      if (driveStatus !== 'CONNECTED' || !latestWorkerEvidence) {
+      // Visibility is evidence-gated, not auth-gated. Losing the live OAuth
+      // session must block execution, but must not erase already verified work.
+      if (!latestWorkerEvidence) {
         workerVisualRef.current?.container.setVisible(false);
         return;
       }
@@ -155,7 +160,9 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
 
       visual.container.setVisible(true);
       visual.statusText.setText(eventType);
-      visual.detailText.setText(workUnitId ? `${workUnitId} · VERIFIED EVENT` : 'VERIFIED RUNTIME EVENT');
+      visual.detailText.setText(
+        `${workUnitId ?? 'RUNTIME'} · ${runtimeConnected ? 'LIVE EVIDENCE' : 'STORED EVIDENCE'}`
+      );
 
       if (eventType === 'COMPLETED' || eventType === 'READBACK_VERIFIED') {
         visual.aura.setFillStyle(0x10b981, 0.16).setStrokeStyle(2, 0x6ee7b7, 0.95);
@@ -170,6 +177,8 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
 
       const isNewEvent = lastWorkerEventIdRef.current !== latestWorkerEvidence.id;
       if (lastWorkerEventIdRef.current === null) {
+        // Persisted history initializes directly at the verified position. It
+        // never replays movement that did not occur during this city session.
         visual.container.setPosition(destination.x, destination.y);
       } else if (isNewEvent) {
         scene.tweens.killTweensOf(visual.container);
@@ -190,7 +199,7 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
     syncWorker();
     EventBus.on('city-ready', syncWorker);
     return () => EventBus.off('city-ready', syncWorker);
-  }, [driveStatus, latestWorkerEvidence, workUnits]);
+  }, [latestWorkerEvidence, runtimeConnected, workUnits]);
 
   const camera = () => (gameRef.current?.scene.getScene('CityScene') as CityScene | undefined)?.cameras.main;
   const zoom = (delta: number) => {
@@ -220,25 +229,36 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
           <div className="flex items-center gap-2 text-xs font-bold tracking-[.18em] text-sky-300">
             <Map size={15}/> OPERATIONAL CITY
           </div>
-          {driveStatus === 'CONNECTED' ? (
+          {runtimeConnected ? (
             <>
               <h2 className="mt-1 text-lg font-black sm:text-xl">ACTIVE AUTONOMOUS CITY VISUALIZER</h2>
               <p className="max-w-2xl text-xs text-slate-400 sm:text-sm">
                 Worker position is projected only from persisted runtime evidence; no synthetic activity is displayed.
               </p>
             </>
+          ) : latestWorkerEvidence ? (
+            <>
+              <h2 className="mt-1 text-lg font-black sm:text-xl">VERIFIED RUNTIME SNAPSHOT</h2>
+              <p className="max-w-2xl text-xs text-slate-400 sm:text-sm">
+                Last verified Worker state remains visible from persistent evidence. New execution stays blocked until Drive reconnects.
+              </p>
+            </>
           ) : (
             <>
               <h2 className="mt-1 text-lg font-black sm:text-xl">STATIC CANONICAL MAP</h2>
               <p className="max-w-2xl text-xs text-slate-400 sm:text-sm">
-                Decorative town only. No authenticated runtime, claims or autonomous movement.
+                No authenticated runtime and no verified Worker evidence is available yet.
               </p>
             </>
           )}
         </div>
-        {driveStatus === 'CONNECTED' ? (
+        {runtimeConnected ? (
           <div className="flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-950/60 px-3 py-2 text-xs font-black text-emerald-200">
             <span className="h-2 w-2 rounded-full bg-emerald-400"/> RUNTIME ACTIVE
+          </div>
+        ) : latestWorkerEvidence ? (
+          <div className="flex items-center gap-2 rounded-full border border-amber-500/50 bg-amber-950/60 px-3 py-2 text-xs font-black text-amber-200">
+            <span className="h-2 w-2 rounded-full bg-amber-400"/> EVIDENCE SNAPSHOT · EXECUTION BLOCKED
           </div>
         ) : (
           <div className="flex items-center gap-2 rounded-full border border-red-500/50 bg-red-950/60 px-3 py-2 text-xs font-black text-red-200">
@@ -249,9 +269,11 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
 
       <div className="relative min-h-0 flex-1">
         <div ref={containerRef} className="absolute inset-0 touch-none" aria-label="Canonical operational city map"/>
-        {driveStatus === 'CONNECTED' && latestWorkerEvidence && (
+        {latestWorkerEvidence && (
           <div className="pointer-events-none absolute left-3 top-3 z-10 max-w-[min(72vw,340px)] rounded-xl border border-cyan-500/40 bg-slate-950/90 px-3 py-2 shadow-xl backdrop-blur">
-            <div className="text-[10px] font-black tracking-[.16em] text-cyan-300">MICRO WORKER · VERIFIED RUNTIME</div>
+            <div className="text-[10px] font-black tracking-[.16em] text-cyan-300">
+              MICRO WORKER · {runtimeConnected ? 'VERIFIED RUNTIME' : 'LAST VERIFIED STATE'}
+            </div>
             <div className="mt-1 font-mono text-xs font-bold text-slate-100">
               {latestWorkerEvidence.eventType.toUpperCase()}{latestWorkerEvidence.workUnitId ? ` · ${latestWorkerEvidence.workUnitId}` : ''}
             </div>
