@@ -125,10 +125,12 @@ class RuntimeEvidenceStoreImpl {
 
   getSnapshot = (): RuntimeEvidenceRecord[] => [...this.records];
 
-  subscribe = (listener: EvidenceListener) => {
+  subscribe = (listener: EvidenceListener): (() => void) => {
     this.listeners.add(listener);
     listener(this.getSnapshot());
-    return () => this.listeners.delete(listener);
+    return () => {
+      this.listeners.delete(listener);
+    };
   };
 }
 
