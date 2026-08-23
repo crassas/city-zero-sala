@@ -13,39 +13,233 @@ interface Props {
   onSelectUnit: (unit: WorkUnit) => void;
 }
 
+type Point = { x: number; y: number };
+
 type WorkerVisual = {
   container: Phaser.GameObjects.Container;
+  avatar: Phaser.GameObjects.Container;
   aura: Phaser.GameObjects.Arc;
   statusText: Phaser.GameObjects.Text;
   detailText: Phaser.GameObjects.Text;
+  leftArm: Phaser.GameObjects.Rectangle;
+  rightArm: Phaser.GameObjects.Rectangle;
+  leftLeg: Phaser.GameObjects.Rectangle;
+  rightLeg: Phaser.GameObjects.Rectangle;
 };
 
-const CITY_WORK_UNIT_SLOTS = [
+type WorkerStage = {
+  eventType: string;
+  label: string;
+  workUnitId?: string;
+  replay: boolean;
+};
+
+const CITY_WORK_UNIT_SLOTS: Point[] = [
   { x: 318, y: 282 }, { x: 812, y: 282 }, { x: 1108, y: 282 }, { x: 1588, y: 282 },
   { x: 300, y: 570 }, { x: 606, y: 570 }, { x: 1300, y: 570 }, { x: 1612, y: 570 },
   { x: 294, y: 892 }, { x: 612, y: 892 }, { x: 856, y: 892 }, { x: 1094, y: 892 }, { x: 1332, y: 892 }
 ];
 
-// Keep the completed worker in the visible centre of the city so a persisted
-// runtime result remains inspectable even after the live Drive session expires.
-const WORKER_DEPOT = { x: 960, y: 730 };
+const WORKER_STATIONS: Record<string, Point> = {
+  DEPOT: { x: 960, y: 730 },
+  CITY_GATE: { x: 960, y: 1080 },
+  DRIVE_SOURCE: { x: 430, y: 690 },
+  RECEIPT_OFFICE: { x: 1490, y: 690 },
+  VERIFY_STATION: { x: 1260, y: 930 },
+  OWNER_GATE: { x: 960, y: 930 }
+};
+
+const MAIN_ROAD_Y = 730;
+const WALK_SEGMENT_MS = 760;
 const WORKER_EVENT_TYPES = new Set([
   'ADMITTED', 'CLAIMED', 'WORKING', 'RECEIPT_CREATED', 'READBACK_VERIFIED', 'BLOCKED', 'COMPLETED'
 ]);
+
+function workUnitPoint(workUnitId: string | undefined, workUnits: WorkUnit[]): Point {
+  if (!workUnitId) return WORKER_STATIONS.DEPOT;
+  const unitIndex = workUnits.findIndex((unit, index) => {
+    const anyUnit = unit as any;
+    const id = String(anyUnit.work_unit_id ?? anyUnit.WORK_UNIT_ID ?? anyUnit.id ?? `WU-${String(index + 1).padStart(2, '0')}`);
+    return id === workUnitId;
+  });
+  return unitIndex >= 0 ? CITY_WORK_UNIT_SLOTS[unitIndex] : WORKER_STATIONS.DEPOT;
+}
+
+function stationForEvidence(record: RuntimeEvidenceRecord, workUnits: WorkUnit[]): { point: Point; label: string } {
+  switch (record.eventType.toUpperCase()) {
+    case 'ADMITTED':
+      return { point: WORKER_STATIONS.CITY_GATE, label: 'CITY GATE · admission accepted' };
+    case 'CLAIMED':
+      return { point: workUnitPoint(record.workUnitId, workUnits), label: 'WORK UNIT · task claimed' };
+    case 'WORKING':
+      return { point: WORKER_STATIONS.DRIVE_SOURCE, label: 'DRIVE SOURCE · reading canonical source' };
+    case 'RECEIPT_CREATED':
+      return { point: WORKER_STATIONS.RECEIPT_OFFICE, label: 'RECEIPT OFFICE · writing receipt' };
+    case 'READBACK_VERIFIED':
+      return { point: WORKER_STATIONS.VERIFY_STATION, label: 'VERIFY STATION · readback confirmed' };
+    case 'BLOCKED':
+      return { point: WORKER_STATIONS.OWNER_GATE, label: 'OWNER GATE · execution blocked' };
+    case 'COMPLETED':
+    default:
+      return { point: WORKER_STATIONS.DEPOT, label: 'DEPOT · completed and available' };
+  }
+}
+
+function roadPath(from: Point, to: Point): Point[] {
+  const points: Point[] = [];
+  const push = (point: Point) => {
+    const last = points[points.length - 1];
+    if (!last || Math.abs(last.x - point.x) > 1 || Math.abs(last.y - point.y) > 1) points.push(point);
+  };
+
+  if (Math.abs(from.y - MAIN_ROAD_Y) > 18) push({ x: from.x, y: MAIN_ROAD_Y });
+  if (Math.abs(from.x - to.x) > 18) push({ x: to.x, y: MAIN_ROAD_Y });
+  if (Math.abs(to.y - MAIN_ROAD_Y) > 18) push(to);
+  else push({ x: to.x, y: to.y });
+
+  return points;
+}
+
+function createWorkerVisual(scene: CityScene): WorkerVisual {
+  const shadow = scene.add.ellipse(0, 29, 34, 10, 0x020617, 0.62);
+  const aura = scene.add.circle(0, -4, 29, 0x22d3ee, 0.08).setStrokeStyle(2, 0x67e8f9, 0.72);
+
+  const leftLeg = scene.add.rectangle(-5, 10, 6, 22, 0x1e293b, 1).setOrigin(0.5, 0);
+  const rightLeg = scene.add.rectangle(5, 10, 6, 22, 0x1e293b, 1).setOrigin(0.5, 0);
+  const leftShoe = scene.add.rectangle(-5, 31, 9, 5, 0x020617, 1);
+  const rightShoe = scene.add.rectangle(5, 31, 9, 5, 0x020617, 1);
+
+  const torso = scene.add.rectangle(0, -5, 22, 30, 0x2563eb, 1).setStrokeStyle(2, 0xbfdbfe, 0.95);
+  const vest = scene.add.rectangle(0, -5, 5, 26, 0xf8fafc, 0.85);
+  const leftArm = scene.add.rectangle(-14, -7, 6, 24, 0xd6a77a, 1).setOrigin(0.5, 0.15);
+  const rightArm = scene.add.rectangle(14, -7, 6, 24, 0xd6a77a, 1).setOrigin(0.5, 0.15);
+
+  const head = scene.add.circle(0, -29, 11, 0xd6a77a, 1).setStrokeStyle(1, 0x7c5b3e, 0.7);
+  const hair = scene.add.arc(0, -32, 10, 180, 360, false, 0x3f2a1f, 1);
+  const leftEye = scene.add.circle(-4, -29, 1.4, 0x0f172a, 1);
+  const rightEye = scene.add.circle(4, -29, 1.4, 0x0f172a, 1);
+  const helmet = scene.add.ellipse(0, -39, 25, 10, 0xfacc15, 1).setStrokeStyle(1, 0x854d0e, 0.9);
+  const helmetBrim = scene.add.rectangle(0, -36, 29, 4, 0xeab308, 1);
+
+  const avatar = scene.add.container(0, 0, [
+    leftLeg, rightLeg, leftShoe, rightShoe, torso, vest, leftArm, rightArm,
+    head, hair, leftEye, rightEye, helmet, helmetBrim
+  ]);
+
+  const title = scene.add.text(0, 41, 'MICRO WORKER', {
+    fontFamily: 'monospace', fontSize: '12px', fontStyle: 'bold', color: '#f8fafc',
+    backgroundColor: '#020617dd', padding: { x: 5, y: 2 }
+  }).setOrigin(0.5, 0);
+
+  const statusText = scene.add.text(0, 58, 'AVAILABLE', {
+    fontFamily: 'monospace', fontSize: '10px', fontStyle: 'bold', color: '#67e8f9',
+    backgroundColor: '#020617dd', padding: { x: 5, y: 2 }
+  }).setOrigin(0.5, 0);
+
+  const detailText = scene.add.text(0, 74, 'DEPOT', {
+    fontFamily: 'monospace', fontSize: '9px', color: '#cbd5e1',
+    backgroundColor: '#020617dd', padding: { x: 5, y: 2 }
+  }).setOrigin(0.5, 0);
+
+  const container = scene.add.container(WORKER_STATIONS.DEPOT.x, WORKER_STATIONS.DEPOT.y, [
+    shadow, aura, avatar, title, statusText, detailText
+  ]).setDepth(5000);
+
+  scene.tweens.add({
+    targets: aura,
+    alpha: { from: 0.32, to: 0.8 },
+    scale: { from: 0.94, to: 1.08 },
+    duration: 1100,
+    yoyo: true,
+    repeat: -1,
+    ease: 'Sine.InOut'
+  });
+
+  return { container, avatar, aura, statusText, detailText, leftArm, rightArm, leftLeg, rightLeg };
+}
+
+function startWalking(scene: CityScene, visual: WorkerVisual, to: Point) {
+  scene.tweens.killTweensOf([visual.leftArm, visual.rightArm, visual.leftLeg, visual.rightLeg, visual.avatar]);
+  const facing = to.x < visual.container.x ? -1 : 1;
+  visual.avatar.setScale(facing, 1);
+
+  visual.leftArm.setAngle(-18);
+  visual.rightArm.setAngle(18);
+  visual.leftLeg.setAngle(12);
+  visual.rightLeg.setAngle(-12);
+
+  scene.tweens.add({
+    targets: [visual.leftArm, visual.rightLeg],
+    angle: 18,
+    duration: 190,
+    yoyo: true,
+    repeat: -1,
+    ease: 'Sine.InOut'
+  });
+  scene.tweens.add({
+    targets: [visual.rightArm, visual.leftLeg],
+    angle: -18,
+    duration: 190,
+    yoyo: true,
+    repeat: -1,
+    ease: 'Sine.InOut'
+  });
+  scene.tweens.add({
+    targets: visual.avatar,
+    y: -2,
+    duration: 190,
+    yoyo: true,
+    repeat: -1,
+    ease: 'Sine.InOut'
+  });
+}
+
+function stopWalking(scene: CityScene, visual: WorkerVisual) {
+  scene.tweens.killTweensOf([visual.leftArm, visual.rightArm, visual.leftLeg, visual.rightLeg, visual.avatar]);
+  visual.leftArm.setAngle(0);
+  visual.rightArm.setAngle(0);
+  visual.leftLeg.setAngle(0);
+  visual.rightLeg.setAngle(0);
+  visual.avatar.setY(0);
+}
+
+function applyEvidenceStyle(visual: WorkerVisual, record: RuntimeEvidenceRecord, runtimeConnected: boolean, label: string) {
+  const eventType = record.eventType.toUpperCase();
+  visual.container.setVisible(true);
+  visual.statusText.setText(eventType);
+  visual.detailText.setText(`${label} · ${runtimeConnected ? 'LIVE' : 'STORED'}`);
+
+  if (eventType === 'COMPLETED' || eventType === 'READBACK_VERIFIED') {
+    visual.aura.setFillStyle(0x10b981, 0.12).setStrokeStyle(2, 0x6ee7b7, 0.92);
+    visual.statusText.setColor('#6ee7b7');
+  } else if (eventType === 'BLOCKED') {
+    visual.aura.setFillStyle(0xef4444, 0.12).setStrokeStyle(2, 0xfca5a5, 0.92);
+    visual.statusText.setColor('#fca5a5');
+  } else {
+    visual.aura.setFillStyle(0x22d3ee, 0.08).setStrokeStyle(2, 0x67e8f9, 0.82);
+    visual.statusText.setColor('#67e8f9');
+  }
+}
 
 export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveStatus, onSelectUnit }) => {
   const gameRef = useRef<Phaser.Game | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const workerVisualRef = useRef<WorkerVisual | null>(null);
-  const lastWorkerEventIdRef = useRef<string | null>(null);
+  const workerInitializedRef = useRef(false);
+  const workerBusyRef = useRef(false);
+  const seenEvidenceIdsRef = useRef<Set<string>>(new Set());
+  const workerQueueRef = useRef<RuntimeEvidenceRecord[]>([]);
+
   const [selected, setSelected] = useState<WorkUnit | null>(null);
   const [runtimeState, setRuntimeState] = useState<Record<string, RuntimeEvent>>({});
   const [runtimeEvidence, setRuntimeEvidence] = useState<RuntimeEvidenceRecord[]>(() => RuntimeEvidenceStore.getSnapshot());
+  const [workerStage, setWorkerStage] = useState<WorkerStage | null>(null);
 
-  const latestWorkerEvidence = useMemo(
-    () => runtimeEvidence.find(record => record.source === 'agentic-runtime' && WORKER_EVENT_TYPES.has(record.eventType.toUpperCase())),
+  const workerEvidence = useMemo(
+    () => runtimeEvidence.filter(record => record.source === 'agentic-runtime' && WORKER_EVENT_TYPES.has(record.eventType.toUpperCase())),
     [runtimeEvidence]
   );
+  const latestWorkerEvidence = workerEvidence[0];
   const runtimeConnected = driveStatus === 'CONNECTED';
 
   useEffect(() => RuntimeEvidenceStore.subscribe(setRuntimeEvidence), []);
@@ -83,7 +277,10 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
     gameRef.current.scene.start('CityScene', { workUnits, ownerGates });
     return () => {
       workerVisualRef.current = null;
-      lastWorkerEventIdRef.current = null;
+      workerInitializedRef.current = false;
+      workerBusyRef.current = false;
+      seenEvidenceIdsRef.current.clear();
+      workerQueueRef.current = [];
       gameRef.current?.destroy(true);
       gameRef.current = null;
     };
@@ -99,107 +296,99 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
       const scene = gameRef.current?.scene.getScene('CityScene') as CityScene | undefined;
       if (!scene || !scene.scene.isActive()) return;
 
-      // Visibility is evidence-gated, not auth-gated. Losing the live OAuth
-      // session must block execution, but must not erase already verified work.
-      if (!latestWorkerEvidence) {
-        workerVisualRef.current?.container.setVisible(false);
-        return;
-      }
-
       let visual = workerVisualRef.current;
       if (!visual) {
-        const shadow = scene.add.ellipse(0, 23, 48, 16, 0x020617, 0.72);
-        const aura = scene.add.circle(0, 0, 31, 0x22d3ee, 0.12).setStrokeStyle(2, 0x67e8f9, 0.92);
-        const body = scene.add.rectangle(0, 5, 28, 30, 0x0f172a, 1).setStrokeStyle(2, 0xe2e8f0, 0.95);
-        const head = scene.add.rectangle(0, -17, 34, 24, 0x1e293b, 1).setStrokeStyle(2, 0x67e8f9, 1);
-        const eyeLeft = scene.add.circle(-7, -18, 3, 0x67e8f9, 1);
-        const eyeRight = scene.add.circle(7, -18, 3, 0x67e8f9, 1);
-        const antenna = scene.add.rectangle(0, -34, 3, 10, 0x94a3b8, 1);
-        const antennaTip = scene.add.circle(0, -40, 4, 0x22d3ee, 1);
-        const title = scene.add.text(0, 38, 'MICRO WORKER', {
-          fontFamily: 'monospace', fontSize: '13px', fontStyle: 'bold', color: '#e2e8f0',
-          backgroundColor: '#020617cc', padding: { x: 6, y: 3 }
-        }).setOrigin(0.5, 0);
-        const statusText = scene.add.text(0, 60, '', {
-          fontFamily: 'monospace', fontSize: '11px', fontStyle: 'bold', color: '#67e8f9',
-          backgroundColor: '#020617dd', padding: { x: 5, y: 2 }
-        }).setOrigin(0.5, 0);
-        const detailText = scene.add.text(0, 79, '', {
-          fontFamily: 'monospace', fontSize: '10px', color: '#94a3b8',
-          backgroundColor: '#020617dd', padding: { x: 5, y: 2 }
-        }).setOrigin(0.5, 0);
-
-        const worker = scene.add.container(WORKER_DEPOT.x, WORKER_DEPOT.y, [
-          shadow, aura, body, head, eyeLeft, eyeRight, antenna, antennaTip, title, statusText, detailText
-        ]).setDepth(5000);
-
-        scene.tweens.add({
-          targets: aura,
-          alpha: { from: 0.45, to: 1 },
-          scale: { from: 0.92, to: 1.12 },
-          duration: 900,
-          yoyo: true,
-          repeat: -1,
-          ease: 'Sine.InOut'
-        });
-
-        visual = { container: worker, aura, statusText, detailText };
+        visual = createWorkerVisual(scene);
         workerVisualRef.current = visual;
       }
 
-      const eventType = latestWorkerEvidence.eventType.toUpperCase();
-      const workUnitId = latestWorkerEvidence.workUnitId;
-      const unitIndex = workUnits.findIndex((unit, index) => {
-        const anyUnit = unit as any;
-        const id = String(anyUnit.work_unit_id ?? anyUnit.WORK_UNIT_ID ?? anyUnit.id ?? `WU-${String(index + 1).padStart(2, '0')}`);
-        return workUnitId ? id === workUnitId : false;
-      });
-      const target = unitIndex >= 0 ? CITY_WORK_UNIT_SLOTS[unitIndex] : undefined;
-      const targetEvents = new Set(['WORKING', 'RECEIPT_CREATED', 'READBACK_VERIFIED', 'BLOCKED']);
-      const destination = targetEvents.has(eventType) && target ? target : WORKER_DEPOT;
+      if (!workerInitializedRef.current) {
+        workerInitializedRef.current = true;
+        workerEvidence.forEach(record => seenEvidenceIdsRef.current.add(record.id));
 
-      visual.container.setVisible(true);
-      visual.statusText.setText(eventType);
-      visual.detailText.setText(
-        `${workUnitId ?? 'RUNTIME'} · ${runtimeConnected ? 'LIVE EVIDENCE' : 'STORED EVIDENCE'}`
-      );
+        if (!latestWorkerEvidence) {
+          visual.container.setVisible(false);
+          return;
+        }
 
-      if (eventType === 'COMPLETED' || eventType === 'READBACK_VERIFIED') {
-        visual.aura.setFillStyle(0x10b981, 0.16).setStrokeStyle(2, 0x6ee7b7, 0.95);
-        visual.statusText.setColor('#6ee7b7');
-      } else if (eventType === 'BLOCKED') {
-        visual.aura.setFillStyle(0xef4444, 0.16).setStrokeStyle(2, 0xfca5a5, 0.95);
-        visual.statusText.setColor('#fca5a5');
-      } else {
-        visual.aura.setFillStyle(0x22d3ee, 0.12).setStrokeStyle(2, 0x67e8f9, 0.92);
-        visual.statusText.setColor('#67e8f9');
-      }
-
-      const isNewEvent = lastWorkerEventIdRef.current !== latestWorkerEvidence.id;
-      if (lastWorkerEventIdRef.current === null) {
-        // Persisted history initializes directly at the verified position. It
-        // never replays movement that did not occur during this city session.
-        visual.container.setPosition(destination.x, destination.y);
-      } else if (isNewEvent) {
-        scene.tweens.killTweensOf(visual.container);
-        scene.tweens.add({
-          targets: visual.container,
-          x: destination.x,
-          y: destination.y,
-          duration: 950,
-          ease: 'Sine.InOut'
+        const station = stationForEvidence(latestWorkerEvidence, workUnits);
+        visual.container.setPosition(station.point.x, station.point.y);
+        applyEvidenceStyle(visual, latestWorkerEvidence, runtimeConnected, station.label);
+        setWorkerStage({
+          eventType: latestWorkerEvidence.eventType.toUpperCase(),
+          label: station.label,
+          workUnitId: latestWorkerEvidence.workUnitId,
+          replay: true
         });
-      } else if (Math.abs(visual.container.x - destination.x) > 2 || Math.abs(visual.container.y - destination.y) > 2) {
-        visual.container.setPosition(destination.x, destination.y);
+        return;
       }
 
-      lastWorkerEventIdRef.current = latestWorkerEvidence.id;
+      const chronological = [...workerEvidence].reverse();
+      const unseen = chronological.filter(record => !seenEvidenceIdsRef.current.has(record.id));
+      unseen.forEach(record => {
+        seenEvidenceIdsRef.current.add(record.id);
+        workerQueueRef.current.push(record);
+      });
+
+      const runNext = () => {
+        if (workerBusyRef.current) return;
+        const record = workerQueueRef.current.shift();
+        if (!record) return;
+
+        workerBusyRef.current = true;
+        const station = stationForEvidence(record, workUnits);
+        const from = { x: visual!.container.x, y: visual!.container.y };
+        const path = roadPath(from, station.point);
+        const eventType = record.eventType.toUpperCase();
+
+        applyEvidenceStyle(visual!, record, runtimeConnected, station.label);
+        setWorkerStage({
+          eventType,
+          label: station.label,
+          workUnitId: record.workUnitId,
+          replay: false
+        });
+
+        let index = 0;
+        const walkSegment = () => {
+          const point = path[index++];
+          if (!point) {
+            stopWalking(scene, visual!);
+            workerBusyRef.current = false;
+            runNext();
+            return;
+          }
+
+          startWalking(scene, visual!, point);
+          scene.tweens.add({
+            targets: visual!.container,
+            x: point.x,
+            y: point.y,
+            duration: WALK_SEGMENT_MS,
+            ease: 'Sine.InOut',
+            onComplete: walkSegment
+          });
+        };
+
+        if (path.length === 0) {
+          workerBusyRef.current = false;
+          runNext();
+        } else {
+          walkSegment();
+        }
+      };
+
+      if (!latestWorkerEvidence && workerQueueRef.current.length === 0) {
+        visual.container.setVisible(false);
+      } else {
+        runNext();
+      }
     };
 
     syncWorker();
     EventBus.on('city-ready', syncWorker);
     return () => EventBus.off('city-ready', syncWorker);
-  }, [latestWorkerEvidence, runtimeConnected, workUnits]);
+  }, [workerEvidence, latestWorkerEvidence, runtimeConnected, workUnits]);
 
   const camera = () => (gameRef.current?.scene.getScene('CityScene') as CityScene | undefined)?.cameras.main;
   const zoom = (delta: number) => {
@@ -231,16 +420,16 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
           </div>
           {runtimeConnected ? (
             <>
-              <h2 className="mt-1 text-lg font-black sm:text-xl">ACTIVE AUTONOMOUS CITY VISUALIZER</h2>
+              <h2 className="mt-1 text-lg font-black sm:text-xl">LIVE WORKER CITY</h2>
               <p className="max-w-2xl text-xs text-slate-400 sm:text-sm">
-                Worker position is projected only from persisted runtime evidence; no synthetic activity is displayed.
+                The worker walks only when persisted runtime evidence advances. Movement never invents process progress.
               </p>
             </>
           ) : latestWorkerEvidence ? (
             <>
               <h2 className="mt-1 text-lg font-black sm:text-xl">VERIFIED RUNTIME SNAPSHOT</h2>
               <p className="max-w-2xl text-xs text-slate-400 sm:text-sm">
-                Last verified Worker state remains visible from persistent evidence. New execution stays blocked until Drive reconnects.
+                Last verified position remains visible. New operational movement stays blocked until Drive reconnects.
               </p>
             </>
           ) : (
@@ -269,19 +458,24 @@ export const CityVisualizer: React.FC<Props> = ({ workUnits, ownerGates, driveSt
 
       <div className="relative min-h-0 flex-1">
         <div ref={containerRef} className="absolute inset-0 touch-none" aria-label="Canonical operational city map"/>
-        {latestWorkerEvidence && (
-          <div className="pointer-events-none absolute left-3 top-3 z-10 max-w-[min(72vw,340px)] rounded-xl border border-cyan-500/40 bg-slate-950/90 px-3 py-2 shadow-xl backdrop-blur">
+
+        {workerStage && (
+          <div className="pointer-events-none absolute left-3 top-3 z-10 max-w-[min(76vw,390px)] rounded-xl border border-cyan-500/40 bg-slate-950/92 px-3 py-2 shadow-xl backdrop-blur">
             <div className="text-[10px] font-black tracking-[.16em] text-cyan-300">
-              MICRO WORKER · {runtimeConnected ? 'VERIFIED RUNTIME' : 'LAST VERIFIED STATE'}
+              MICRO WORKER · {workerStage.replay ? 'LAST VERIFIED POSITION' : 'EVENT-BACKED WALK'}
             </div>
             <div className="mt-1 font-mono text-xs font-bold text-slate-100">
-              {latestWorkerEvidence.eventType.toUpperCase()}{latestWorkerEvidence.workUnitId ? ` · ${latestWorkerEvidence.workUnitId}` : ''}
+              {workerStage.eventType}{workerStage.workUnitId ? ` · ${workerStage.workUnitId}` : ''}
             </div>
-            <div className="mt-1 truncate font-mono text-[10px] text-slate-400">
-              {latestWorkerEvidence.actorId ?? 'Agentic_Runtime_V1'} · {new Date(latestWorkerEvidence.timestamp).toLocaleTimeString()}
-            </div>
+            <div className="mt-1 font-mono text-[10px] text-slate-400">{workerStage.label}</div>
           </div>
         )}
+
+        <div className="pointer-events-none absolute bottom-3 left-3 z-10 hidden rounded-xl border border-slate-700 bg-slate-950/88 px-3 py-2 text-[10px] text-slate-400 shadow-lg sm:block">
+          <div className="font-black tracking-[.14em] text-slate-300">REAL PROCESS ROUTE</div>
+          <div className="mt-1 font-mono">GATE → WORK UNIT → DRIVE SOURCE → RECEIPT → VERIFY → DEPOT</div>
+        </div>
+
         <div className="absolute right-3 top-3 z-10 flex overflow-hidden rounded-xl border border-slate-600 bg-slate-950/90 shadow-xl">
           <button onClick={() => zoom(.12)} className="p-3 text-slate-200 hover:bg-slate-800" aria-label="Zoom in"><ZoomIn size={18}/></button>
           <button onClick={() => zoom(-.12)} className="border-x border-slate-700 p-3 text-slate-200 hover:bg-slate-800" aria-label="Zoom out"><ZoomOut size={18}/></button>
