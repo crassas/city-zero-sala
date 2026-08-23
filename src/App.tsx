@@ -11,7 +11,7 @@ import { OwnerGatesPanel } from './components/OwnerGatesPanel';
 import { OPERATIONS_CONSOLE_V0_PAYLOAD } from './data/operationsConsoleV0';
 import { IntentHandler } from './components/IntentHandler';
 import { WorkUnit, ProposedAction, DriveConnectionState, CanonicalEntrypoint, Mission, RuntimeEvent } from './types';
-import { initAuth, googleSignIn, logout, getAccessToken } from './lib/firebaseAuth';
+import { initAuth, googleSignIn, logout } from './lib/firebaseAuth';
 import { User } from 'firebase/auth';
 import { AgentRuntimeInstance } from './runtime/AgenticRuntime';
 import { EventBus } from './game/EventBus';
@@ -37,15 +37,6 @@ export default function App() {
   });
 
   useEffect(() => {
-    const sendToken = async () => {
-      const token = await getAccessToken();
-      if (token) {
-        fetch('/api/token', { method: 'POST', body: token }).catch(() => {});
-      }
-    };
-    sendToken();
-    const intv = setInterval(sendToken, 3000);
-
     const unsubscribe = initAuth(
       (currentUser) => {
         setUser(currentUser);
