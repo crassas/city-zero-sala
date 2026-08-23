@@ -1,14 +1,15 @@
 {
-  "missionId": "MISSION-SOCIETY-FRONTEND-BRIDGE-20260822-001",
+  "missionId": "MISSION-RUNTIME-EVIDENCE-LEDGER-20260823-001",
   "actor": "CHATGPT",
-  "purpose": "Connect City Zero frontend to the existing verified Society backend",
+  "purpose": "Make the runtime evidence ledger persistent and read-only by default, with zero silent Drive writes",
   "allowedPaths": [
-    "src/lib/societyApi.ts",
-    "src/components/Header.tsx",
-    "src/App.tsx",
-    ".env.example"
+    "src/runtime/readOnlyCapabilityProbe.ts",
+    "src/runtime/runtimeEvidenceStore.ts",
+    "src/runtime/societyMachine.ts",
+    "src/components/EvidenceLedger.tsx",
+    "src/App.tsx"
   ],
-  "expiresAt": "2026-08-23T23:59:59+01:00",
-  "maxChangedFiles": 4,
+  "expiresAt": "2026-08-24T23:59:59+01:00",
+  "maxChangedFiles": 5,
   "ownerOverrideRequired": false
 }
